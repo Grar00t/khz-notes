@@ -1,0 +1,22 @@
+{
+  "id": "wrapper-ledger",
+  "version": "1.0.0",
+  "title": "The Wrapper Ledger",
+  "epistemic_policy": {
+    "observed": "Directly observed in supplied or captured material.",
+    "sourced": "Reported by an identified external or primary source.",
+    "inferred": "Analytical interpretation derived from evidence.",
+    "unknown": "Not demonstrated by the material currently attached to the ledger."
+  },
+  "verification_rule": "Do not promote rhetoric to evidence. A hash authenticates an artifact; it does not establish the truth of its contents.",
+  "nodes": [
+    {"id":"R01","claim":"Human-like interface cues can affect perceived understanding or reliability.","state":"observed","evidence_ref":null,"status":"requires empirical or cited support"},
+    {"id":"R04","claim":"The project documents more than 300 public receipts/posts.","state":"sourced","evidence_ref":null,"status":"requires archive/index reference"},
+    {"id":"R12","claim":"Local-first execution can reduce dependence on remote services for a defined system boundary.","state":"inferred","evidence_ref":null,"status":"scope-dependent"},
+    {"id":"R21","claim":"Telemetry capture occurred in the reported audit material.","state":"observed","evidence_ref":null,"status":"requires raw capture and timestamp"},
+    {"id":"R23","claim":"A partner audit was filed with a vendor disclosure channel.","state":"sourced","evidence_ref":null,"status":"filing and acceptance must remain separate"},
+    {"id":"R30","claim":"The essay cites a 2025 annual loss figure of $114.1B.","state":"sourced","evidence_ref":null,"status":"requires exact primary report and definition"},
+    {"id":"R37","claim":"The substitution test is a useful method for exposing personified product language.","state":"inferred","evidence_ref":null,"status":"methodological claim, not proof"},
+    {"id":"R38","claim":"SHA-256 hashes are used as evidence-identity anchors.","state":"observed","evidence_ref":null,"status":"hash verifies artifact identity, not proposition truth"}
+  ]
+}
