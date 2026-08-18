@@ -1,0 +1,35 @@
+VERDICT: NOT SAFE AS WRITTEN
+
+Build:
+- FAIL: V_MAX is undefined.
+- FAIL: Node fields type[1], label[2], desc[3] cannot hold supplied strings.
+- FAIL/RISK: Edge rel[1] cannot hold supplied relation names.
+
+Memory safety:
+- HIGH: strncpy() bounds exceed destination arrays for type/label/desc/rel.
+- HIGH: strncpy() may leave strings unterminated for exact-length inputs.
+
+Graph integrity:
+- HIGH: adde() does not verify src/dst nodes exist.
+- MEDIUM: duplicate edge IDs are not rejected.
+- HIGH: evidence is not linked to graph nodes/claims.
+
+Evidence integrity:
+- HIGH: sovereignty_verified and ring0_active are asserted without evidence.
+- HIGH: FNV-1a is non-cryptographic and must not be used as proof/authentication.
+
+Metrics:
+- HIGH: audit_score is array occupancy, not audit correctness.
+
+Semantics:
+- MEDIUM: Fitra-Anchor and DMRG edges are labels only; no enforcement is implemented.
+- MEDIUM: SLH-DSA PEER_ALGORITHM relation is semantically weak.
+
+Recommended action:
+1. Fix field capacities and define MAX_EVIDENCE.
+2. Replace unsafe copies with bounded, NUL-terminating helpers.
+3. Validate node/edge/evidence IDs and endpoint integrity.
+4. Attach evidence objects to claims/nodes.
+5. Remove unverifiable boolean claims from generated JSON.
+6. Rename/redefine audit_score around explicit verified invariants.
+7. Use SHA-256 for artifact integrity where cryptographic evidence is required.
