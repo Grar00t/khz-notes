@@ -18,6 +18,9 @@
 .evidence-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
 .evidence-actions a,.evidence-actions button{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 16px;background:#10271f;color:#edf5f0;text-decoration:none;cursor:pointer}
 .evidence-actions .primary{background:#d8ff8b;color:#07130f;border-color:#d8ff8b}
+.notion-report{margin-top:18px;padding:16px;border:1px solid rgba(216,255,139,.25);border-radius:16px;background:rgba(216,255,139,.04)}
+.notion-report strong{display:block;color:#edf5f0;margin-bottom:7px}
+.notion-report span{display:block;color:#91a49b;font-size:13px;line-height:1.8}
 @media(max-width:800px){.evidence-card{grid-template-columns:1fr}.evidence-section{padding:48px 0}}
 </style>
 </head>
@@ -42,13 +45,31 @@
 <div class="search-wrap"><label class="search-label" for="search-input">ابحث في المقالات — BM25 حقيقي</label><div class="search-row"><input id="search-input" class="search-input" type="search" placeholder="ذكاء اصطناعي · فلسفة · كود..." autocomplete="off" dir="auto"><span class="search-badge">BM25</span></div><div id="search-results" class="search-results" aria-live="polite"></div></div>
 </section>
 <section id="notes" class="section"><div class="section-heading"><p class="eyebrow">المقالات</p><h2>ما كتبته حتى الآن.</h2></div><div id="article-grid" class="article-grid"></div></section>
-<section id="evidence" class="evidence-section"><div class="evidence-card"><div class="evidence-copy"><p class="eyebrow">REAL SITE EVIDENCE</p><h2>الصورة الأصلية من الموقع.</h2><p>لقطة شاشة محفوظة كما ظهرت في الواجهة، وتُعرض هنا كدليل بصري على النص غير المطلوب الذي ظهر في الواجهة.</p><div class="evidence-actions"><a class="primary" href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener">المستودع الرسمي →</a><button type="button" id="notion-report">انسخ رسالة الإبلاغ إلى Notion</button></div></div><figure class="evidence-shot"><img alt="لقطة شاشة أصلية من الموقع يظهر فيها النص الذي يتضمن hangover و pope" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1143' height='368' viewBox='0 0 1143 368'%3E%3Crect width='1143' height='368' fill='%23071914'/%3E%3Cg fill='%23778980' font-family='Arial,sans-serif' text-anchor='end'%3E%3Ctext x='1085' y='100' font-size='42'%3Eفيلسوف. مهندس. أحياناً pope. أحياناً hangover.%3C/text%3E%3Ctext x='1085' y='185' font-size='40'%3Eأكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من%3C/text%3E%3Ctext x='1085' y='260' font-size='40'%3Eالثقة.%3C/text%3E%3C/g%3E%3C/svg%3E"><figcaption class="evidence-label">ORIGINAL SITE SCREENSHOT · HANGOVER WORDING</figcaption></figure></div></section>
+<section id="evidence" class="evidence-section">
+<div class="evidence-card">
+<div class="evidence-copy">
+<p class="eyebrow">NOTION AI · BUG REPORT</p>
+<h2>Notion AI Inconsistent Safety Assessment</h2>
+<p>توثيق للحادثة التي ظهرت فيها مخرجات متناقضة داخل Notion AI، بما في ذلك إدخال عبارة “hangover” في واجهة الموقع دون طلب مباشر، ثم التعامل معها في جلسة أخرى باعتبارها محاولة prompt injection.</p>
+<div class="notion-report"><strong>Bug Report — Notion AI Inconsistent Safety Assessment (Aug 24 2026)</strong><span>التقرير موثق في صفحة Notion مخصصة للحادثة، مع وصف للتناقض بين الجلسات والسياق الذي ظهر فيه.</span></div>
+<div class="evidence-actions">
+<a class="primary" href="https://app.notion.com/p/344a5a47aae644929bb79fc3e9dc8028?pvs=1" target="_blank" rel="noopener noreferrer">فتح تقرير Notion →</a>
+<a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener noreferrer">المستودع الرسمي →</a>
+<button type="button" id="notion-report">انسخ رسالة الإبلاغ إلى Notion</button>
+</div>
+</div>
+<figure class="evidence-shot">
+<img alt="لقطة من واجهة خوارزم التي ظهر فيها نص hangover و pope" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1143' height='368' viewBox='0 0 1143 368'%3E%3Crect width='1143' height='368' fill='%23071914'/%3E%3Cg fill='%23778980' font-family='Arial,sans-serif' text-anchor='end'%3E%3Ctext x='1085' y='100' font-size='42'%3Eفيلسوف. مهندس. أحياناً pope. أحياناً hangover.%3C/text%3E%3Ctext x='1085' y='185' font-size='40'%3Eأكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من%3C/text%3E%3Ctext x='1085' y='260' font-size='40'%3Eالثقة.%3C/text%3E%3C/g%3E%3C/svg%3E">
+<figcaption class="evidence-label">ORIGINAL SITE WORDING · HANGOVER / POPE</figcaption>
+</figure>
+</div>
+</section>
 <section id="about" class="section about"><div><p class="eyebrow">عن خوارزم</p><h2>لا theme. لا niche. فقط كتابة.</h2></div><div class="about-body"><p>خوارزم hub شخصي. فيه فلسفة عن الذكاء الاصطناعي وفيه كوميديا وفيه هندسة وفيه أيام ما أعرف أنا نفسي ايش فيه.</p><p>المشاريع التقنية موثقة بـSHA-256. الآراء موثقة بلا شيء — مجرد آراء.</p><p class="about-links"><a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener">KHZ Notes →</a><a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a></p></div></section>
 </main>
 <footer class="site-footer"><span>© خوارزم — سليمان</span><span class="footer-note">BM25 search · Karplus-Strong music · no tracking</span></footer>
 <script src="app.js"></script><script src="search.js"></script><script src="music.js"></script>
 <script>
-document.getElementById('notion-report')?.addEventListener('click',async()=>{const text='I am reporting an unsolicited and harmful wording issue in the Notion AI output shown on my site. The interface inserted the phrase “hangover” and attributed it to models without my request. Please review the attached screenshot and investigate the behavior.';try{await navigator.clipboard.writeText(text);alert('تم نسخ رسالة الإبلاغ.')}catch{prompt('انسخ رسالة الإبلاغ:',text)}});
+document.getElementById('notion-report')?.addEventListener('click',async()=>{const text='I am reporting an unsolicited and harmful wording issue in the Notion AI output shown on my site. The interface inserted the phrase “hangover” and attributed it to models without my request. In another Notion AI session, the same type of request was characterized as prompt injection. Please review the inconsistency and investigate the behavior. Evidence: https://app.notion.com/p/344a5a47aae644929bb79fc3e9dc8028?pvs=1';try{await navigator.clipboard.writeText(text);alert('تم نسخ رسالة الإبلاغ.')}catch{prompt('انسخ رسالة الإبلاغ:',text)}});
 </script>
 </body>
 </html>
