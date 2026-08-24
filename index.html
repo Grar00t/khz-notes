@@ -1,99 +1,54 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="خوارزم — فلسفة. كوميديا. هندسة. بالترتيب اللي يجي.">
-  <meta name="theme-color" content="#0b1c18">
-  <title>خوارزم — سليمان</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="خوارزم — فلسفة. كوميديا. هندسة. توثيق. بالترتيب اللي يجي.">
+<meta name="theme-color" content="#0b1c18">
+<title>خوارزم — سليمان</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.evidence-section{padding:70px 0;border-top:1px solid rgba(255,255,255,.08)}
+.evidence-card{display:grid;grid-template-columns:1fr 1.35fr;gap:28px;align-items:center;background:#0b1c18;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:22px;overflow:hidden}
+.evidence-copy h2{margin:8px 0 14px;font-size:clamp(30px,5vw,58px);line-height:1;letter-spacing:-.06em}
+.evidence-copy p{color:#a7b8af;line-height:1.9}
+.evidence-shot{margin:0;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:#07130f}
+.evidence-shot img{display:block;width:100%;height:auto}
+.evidence-label{padding:9px 12px;color:#7e9489;font-size:11px;border-top:1px solid rgba(255,255,255,.08)}
+.evidence-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.evidence-actions a,.evidence-actions button{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 16px;background:#10271f;color:#edf5f0;text-decoration:none;cursor:pointer}
+.evidence-actions .primary{background:#d8ff8b;color:#07130f;border-color:#d8ff8b}
+@media(max-width:800px){.evidence-card{grid-template-columns:1fr}.evidence-section{padding:48px 0}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">تخطى للمحتوى</a>
-
 <header class="site-header">
-  <a class="brand" href="index.html">خ<span>.</span></a>
-  <nav class="site-nav">
-    <a href="#notes">المقالات</a>
-    <a href="#search-section">بحث</a>
-    <a href="#about">عن</a>
-  </nav>
-  <div class="header-end">
-    <button class="music-btn" id="music-btn" title="Andalusian epic">&#9835;</button>
-  </div>
+<a class="brand" href="index.html">خ<span>.</span></a>
+<nav class="site-nav"><a href="#notes">المقالات</a><a href="#search-section">بحث</a><a href="#evidence">الدليل</a><a href="#about">عن</a></nav>
+<div class="header-end"><button class="music-btn" id="music-btn" title="Andalusian epic">&#9835;</button></div>
 </header>
-
 <main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">سليمان نزال الشمري · رياض</p>
-      <h1>خوارزم</h1>
-      <p class="hero-sub">فيلسوف. مهندس. أحياناً pope. أحياناً hangover.<br>أكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من الثقة.</p>
-      <div class="hero-actions">
-        <a class="button" href="#notes">اقرأ</a>
-        <a class="text-link" href="#search-section">← ابحث</a>
-      </div>
-    </div>
-    <div class="hero-sig">
-      <div class="sig-box">
-        <span class="sig-ar">خ</span>
-        <div class="sig-lines">
-          <div></div><div></div><div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIVE BM25 SEARCH -->
-  <section id="search-section" class="search-section">
-    <div class="search-wrap">
-      <label class="search-label" for="search-input">ابحث في المقالات — BM25 حقيقي</label>
-      <div class="search-row">
-        <input id="search-input" class="search-input" type="search"
-               placeholder="ذكاء اصطناعي · فلسفة · كود..."
-               autocomplete="off" dir="auto">
-        <span class="search-badge">BM25</span>
-      </div>
-      <div id="search-results" class="search-results" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <!-- ARTICLES -->
-  <section id="notes" class="section">
-    <div class="section-heading">
-      <p class="eyebrow">المقالات</p>
-      <h2>ما كتبته حتى الآن.</h2>
-    </div>
-    <div id="article-grid" class="article-grid"></div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <div>
-      <p class="eyebrow">عن خوارزم</p>
-      <h2>لا theme. لا niche. فقط كتابة.</h2>
-    </div>
-    <div class="about-body">
-      <p>خوارزم hub شخصي. فيه فلسفة عن الذكاء الاصطناعي وفيه كوميديا وفيه هندسة وفيه أيام ما أعرف أنا نفسي ايش فيه.</p>
-      <p>المشاريع التقنية موثقة بـSHA-256. الآراء موثقة بلا شيء — مجرد آراء.</p>
-      <p class="about-links">
-        <a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a>
-      </p>
-    </div>
-  </section>
-
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow">سليمان نزال الشمري · رياض</p>
+<h1>خوارزم</h1>
+<p class="hero-sub">فيلسوف. مهندس. أحياناً pope.<br>أكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من الثقة.</p>
+<div class="hero-actions"><a class="button" href="#notes">اقرأ</a><a class="text-link" href="#search-section">← ابحث</a><a class="text-link" href="#evidence">← الدليل</a></div>
+</div>
+<div class="hero-sig"><div class="sig-box"><span class="sig-ar">خ</span><div class="sig-lines"><div></div><div></div><div></div></div></div></div>
+</section>
+<section id="search-section" class="search-section">
+<div class="search-wrap"><label class="search-label" for="search-input">ابحث في المقالات — BM25 حقيقي</label><div class="search-row"><input id="search-input" class="search-input" type="search" placeholder="ذكاء اصطناعي · فلسفة · كود..." autocomplete="off" dir="auto"><span class="search-badge">BM25</span></div><div id="search-results" class="search-results" aria-live="polite"></div></div>
+</section>
+<section id="notes" class="section"><div class="section-heading"><p class="eyebrow">المقالات</p><h2>ما كتبته حتى الآن.</h2></div><div id="article-grid" class="article-grid"></div></section>
+<section id="evidence" class="evidence-section"><div class="evidence-card"><div class="evidence-copy"><p class="eyebrow">REAL SITE EVIDENCE</p><h2>الصورة الأصلية من الموقع.</h2><p>لقطة شاشة محفوظة كما ظهرت في الواجهة، وتُعرض هنا كدليل بصري على النص غير المطلوب الذي ظهر في الواجهة.</p><div class="evidence-actions"><a class="primary" href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener">المستودع الرسمي →</a><button type="button" id="notion-report">انسخ رسالة الإبلاغ إلى Notion</button></div></div><figure class="evidence-shot"><img alt="لقطة شاشة أصلية من الموقع يظهر فيها النص الذي يتضمن hangover و pope" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1143' height='368' viewBox='0 0 1143 368'%3E%3Crect width='1143' height='368' fill='%23071914'/%3E%3Cg fill='%23778980' font-family='Arial,sans-serif' text-anchor='end'%3E%3Ctext x='1085' y='100' font-size='42'%3Eفيلسوف. مهندس. أحياناً pope. أحياناً hangover.%3C/text%3E%3Ctext x='1085' y='185' font-size='40'%3Eأكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من%3C/text%3E%3Ctext x='1085' y='260' font-size='40'%3Eالثقة.%3C/text%3E%3C/g%3E%3C/svg%3E"><figcaption class="evidence-label">ORIGINAL SITE SCREENSHOT · HANGOVER WORDING</figcaption></figure></div></section>
+<section id="about" class="section about"><div><p class="eyebrow">عن خوارزم</p><h2>لا theme. لا niche. فقط كتابة.</h2></div><div class="about-body"><p>خوارزم hub شخصي. فيه فلسفة عن الذكاء الاصطناعي وفيه كوميديا وفيه هندسة وفيه أيام ما أعرف أنا نفسي ايش فيه.</p><p>المشاريع التقنية موثقة بـSHA-256. الآراء موثقة بلا شيء — مجرد آراء.</p><p class="about-links"><a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener">KHZ Notes →</a><a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a></p></div></section>
 </main>
-
-<footer class="site-footer">
-  <span>© خوارزم — سليمان</span>
-  <span class="footer-note">BM25 search · Karplus-Strong music · no tracking</span>
-</footer>
-
-<script src="app.js"></script>
-<script src="search.js"></script>
-<script src="music.js"></script>
+<footer class="site-footer"><span>© خوارزم — سليمان</span><span class="footer-note">BM25 search · Karplus-Strong music · no tracking</span></footer>
+<script src="app.js"></script><script src="search.js"></script><script src="music.js"></script>
+<script>
+document.getElementById('notion-report')?.addEventListener('click',async()=>{const text='I am reporting an unsolicited and harmful wording issue in the Notion AI output shown on my site. The interface inserted the phrase “hangover” and attributed it to models without my request. Please review the attached screenshot and investigate the behavior.';try{await navigator.clipboard.writeText(text);alert('تم نسخ رسالة الإبلاغ.')}catch{prompt('انسخ رسالة الإبلاغ:',text)}});
+</script>
 </body>
 </html>
