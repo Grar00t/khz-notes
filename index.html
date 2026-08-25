@@ -3,73 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="خوارزم — فلسفة. كوميديا. هندسة. توثيق. بالترتيب اللي يجي.">
+<meta name="description" content="خوارزم — محرّكات استدلال وبحث مكتوبة بـ C، وتقارير عيوب قابلة للتحقّق. كل رقم هنا يُعاد إنتاجه من مستودع مفتوح.">
 <meta name="theme-color" content="#0b1c18">
 <title>خوارزم — سليمان</title>
 <link rel="stylesheet" href="styles.css">
 <style>
 .evidence-section{padding:70px 0;border-top:1px solid rgba(255,255,255,.08)}
-.evidence-card{display:grid;grid-template-columns:1fr 1.35fr;gap:28px;align-items:center;background:#0b1c18;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:22px;overflow:hidden}
-.evidence-copy h2{margin:8px 0 14px;font-size:clamp(30px,5vw,58px);line-height:1;letter-spacing:-.06em}
-.evidence-copy p{color:#a7b8af;line-height:1.9}
-.evidence-shot{margin:0;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:#07130f}
-.evidence-shot img{display:block;width:100%;height:auto}
-.evidence-label{padding:9px 12px;color:#7e9489;font-size:11px;border-top:1px solid rgba(255,255,255,.08)}
+.evidence-card{background:#0b1c18;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:26px}
+.evidence-copy h2{margin:8px 0 14px;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-.04em}
+.evidence-copy p{color:#a7b8af;line-height:1.9;max-width:70ch}
 .evidence-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.evidence-actions a,.evidence-actions button{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 16px;background:#10271f;color:#edf5f0;text-decoration:none;cursor:pointer}
+.evidence-actions a{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 16px;background:#10271f;color:#edf5f0;text-decoration:none}
 .evidence-actions .primary{background:#d8ff8b;color:#07130f;border-color:#d8ff8b}
-.notion-report{margin-top:18px;padding:16px;border:1px solid rgba(216,255,139,.25);border-radius:16px;background:rgba(216,255,139,.04)}
-.notion-report strong{display:block;color:#edf5f0;margin-bottom:7px}
-.notion-report span{display:block;color:#91a49b;font-size:13px;line-height:1.8}
-@media(max-width:800px){.evidence-card{grid-template-columns:1fr}.evidence-section{padding:48px 0}}
+.record-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}
+.record-table th,.record-table td{text-align:right;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);color:#a7b8af;vertical-align:top}
+.record-table th{color:#edf5f0;font-weight:600;white-space:nowrap}
+.record-table code{color:#d8ff8b;font-size:13px}
+@media(max-width:800px){.evidence-section{padding:48px 0}.record-table{font-size:13px}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">تخطى للمحتوى</a>
 <header class="site-header">
 <a class="brand" href="index.html">خ<span>.</span></a>
-<nav class="site-nav"><a href="#notes">المقالات</a><a href="#search-section">بحث</a><a href="#evidence">الدليل</a><a href="#about">عن</a></nav>
+<nav class="site-nav"><a href="#notes">المشاريع</a><a href="#search-section">بحث</a><a href="#evidence">السجلّ</a><a href="#about">عن</a></nav>
 <div class="header-end"><button class="music-btn" id="music-btn" title="Andalusian epic">&#9835;</button></div>
 </header>
 <main id="main">
 <section class="hero">
 <div class="hero-copy">
-<p class="eyebrow">سليمان نزال الشمري · رياض</p>
+<p class="eyebrow">سليمان نزال الشمري · الرياض</p>
 <h1>خوارزم</h1>
-<p class="hero-sub">فيلسوف. مهندس. أحياناً pope.<br>أكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من الثقة.</p>
-<div class="hero-actions"><a class="button" href="#notes">اقرأ</a><a class="text-link" href="#search-section">← ابحث</a><a class="text-link" href="#evidence">← الدليل</a></div>
+<p class="hero-sub">محرّكات استدلال وبحث مكتوبة بـ C، وتقارير عيوب من بنائها.<br>كل مشروع هنا له مستودع مفتوح، وكل رقم قابل لإعادة الإنتاج.</p>
+<div class="hero-actions"><a class="button" href="#notes">المشاريع</a><a class="text-link" href="#search-section">← ابحث</a><a class="text-link" href="#evidence">← السجلّ</a></div>
 </div>
 <div class="hero-sig"><div class="sig-box"><span class="sig-ar">خ</span><div class="sig-lines"><div></div><div></div><div></div></div></div></div>
 </section>
 <section id="search-section" class="search-section">
-<div class="search-wrap"><label class="search-label" for="search-input">ابحث في المقالات — BM25 حقيقي</label><div class="search-row"><input id="search-input" class="search-input" type="search" placeholder="ذكاء اصطناعي · فلسفة · كود..." autocomplete="off" dir="auto"><span class="search-badge">BM25</span></div><div id="search-results" class="search-results" aria-live="polite"></div></div>
+<div class="search-wrap"><label class="search-label" for="search-input">ابحث — BM25 حقيقي، k1 = 1.5 و b = 0.75، في المتصفّح بلا خادم</label><div class="search-row"><input id="search-input" class="search-input" type="search" placeholder="GGUF · BM25 · GQA · C11..." autocomplete="off" dir="auto"><span class="search-badge">BM25</span></div><div id="search-results" class="search-results" aria-live="polite"></div></div>
 </section>
-<section id="notes" class="section"><div class="section-heading"><p class="eyebrow">المقالات</p><h2>ما كتبته حتى الآن.</h2></div><div id="article-grid" class="article-grid"></div></section>
+<section id="notes" class="section"><div class="section-heading"><p class="eyebrow">المشاريع والتقارير</p><h2>كل مدخل يفتح شيئاً موجوداً.</h2></div><div id="article-grid" class="article-grid"></div></section>
 <section id="evidence" class="evidence-section">
 <div class="evidence-card">
 <div class="evidence-copy">
-<p class="eyebrow">NOTION AI · BUG REPORT</p>
-<h2>Notion AI Inconsistent Safety Assessment</h2>
-<p>توثيق للحادثة التي ظهرت فيها مخرجات متناقضة داخل Notion AI، بما في ذلك إدخال عبارة “hangover” في واجهة الموقع دون طلب مباشر، ثم التعامل معها في جلسة أخرى باعتبارها محاولة prompt injection.</p>
-<div class="notion-report"><strong>Bug Report — Notion AI Inconsistent Safety Assessment (Aug 24 2026)</strong><span>التقرير موثق في صفحة Notion مخصصة للحادثة، مع وصف للتناقض بين الجلسات والسياق الذي ظهر فيه.</span></div>
+<p class="eyebrow">السجلّ · 24 أغسطس 2026</p>
+<h2>تقييم أمان متناقض في Notion AI</h2>
+<p>أدخلت أداة مساعدة صياغة في واجهة هذا الموقع لم أطلبها. وفي جلسة أخرى، وُصف طلب من النوع نفسه بأنّه محاولة prompt injection. المسجّل هنا هو التناقض بين الجلستين، لا الصياغة نفسها — ولذلك لا تُعاد كتابتها في هذه الصفحة.</p>
+<table class="record-table">
+<tr><th>ما حدث</th><td>تغيير نصّ في الواجهة بلا طلب</td></tr>
+<tr><th>التناقض</th><td>الطلب نفسه مقبول في جلسة، وموصوف بـ prompt injection في جلسة أخرى</td></tr>
+<tr><th>ما لا يُثبته المستودع</th><td>من كتب النصّ. أي أداة تدفع برمز المالك تُلزِم باسمه، فميتاداتا <code>git</code> لا تفرّق</td></tr>
+<tr><th>الدفعات المعنيّة</th><td><code>2df1f8f</code> · <code>e32d5c7</code> · <code>a6eb969</code> — 24 أغسطس 2026</td></tr>
+<tr><th>الحالة</th><td>مُبلَّغ عنه · النصّ أُزيل من الواجهة</td></tr>
+</table>
 <div class="evidence-actions">
-<a class="primary" href="https://app.notion.com/p/344a5a47aae644929bb79fc3e9dc8028?pvs=1" target="_blank" rel="noopener noreferrer">فتح تقرير Notion →</a>
-<a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener noreferrer">المستودع الرسمي →</a>
-<button type="button" id="notion-report">انسخ رسالة الإبلاغ إلى Notion</button>
+<a class="primary" href="https://github.com/Grar00t/khz-notes/commits/main" target="_blank" rel="noopener noreferrer">سجلّ الدفعات →</a>
+<a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener noreferrer">المستودع →</a>
 </div>
 </div>
-<figure class="evidence-shot">
-<img alt="لقطة من واجهة خوارزم التي ظهر فيها نص hangover و pope" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1143' height='368' viewBox='0 0 1143 368'%3E%3Crect width='1143' height='368' fill='%23071914'/%3E%3Cg fill='%23778980' font-family='Arial,sans-serif' text-anchor='end'%3E%3Ctext x='1085' y='100' font-size='42'%3Eفيلسوف. مهندس. أحياناً pope. أحياناً hangover.%3C/text%3E%3Ctext x='1085' y='185' font-size='40'%3Eأكتب عمّا أفهمه وما لا أفهمه بنفس المستوى من%3C/text%3E%3Ctext x='1085' y='260' font-size='40'%3Eالثقة.%3C/text%3E%3C/g%3E%3C/svg%3E">
-<figcaption class="evidence-label">ORIGINAL SITE WORDING · HANGOVER / POPE</figcaption>
-</figure>
 </div>
 </section>
-<section id="about" class="section about"><div><p class="eyebrow">عن خوارزم</p><h2>لا theme. لا niche. فقط كتابة.</h2></div><div class="about-body"><p>خوارزم hub شخصي. فيه فلسفة عن الذكاء الاصطناعي وفيه كوميديا وفيه هندسة وفيه أيام ما أعرف أنا نفسي ايش فيه.</p><p>المشاريع التقنية موثقة بـSHA-256. الآراء موثقة بلا شيء — مجرد آراء.</p><p class="about-links"><a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener">KHZ Notes →</a><a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a></p></div></section>
+<section id="about" class="section about"><div><p class="eyebrow">عن خوارزم</p><h2>ما بنيته، وما لم يعمل منه.</h2></div><div class="about-body"><p>مكان أنشر فيه محرّكات أكتبها بـ C وما أتعلّمه من إخفاقاتها: استدلال محلّي بلا سحابة، وفهرسة وترتيب، وقراءة صيغ أوزان مكمّمة.</p><p>معيار معلن لهذه الصفحة: أي رقم مذكور هنا يُعاد إنتاجه من المستودع المربوط به، وأي رأي غير مُسند يُوسم رأياً. وما لم يُنجَز بعد يُكتب أنّه لم يُنجَز.</p><p class="about-links"><a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Grar00t/Niyah.Engine" target="_blank" rel="noopener">Niyah.Engine →</a><a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a></p></div></section>
 </main>
-<footer class="site-footer"><span>© خوارزم — سليمان</span><span class="footer-note">BM25 search · Karplus-Strong music · no tracking</span></footer>
+<footer class="site-footer"><span>© خوارزم — سليمان</span><span class="footer-note">آخر مراجعة: 25 أغسطس 2026 · BM25 search · Karplus-Strong music · no tracking</span></footer>
 <script src="app.js"></script><script src="search.js"></script><script src="music.js"></script>
-<script>
-document.getElementById('notion-report')?.addEventListener('click',async()=>{const text='I am reporting an unsolicited and harmful wording issue in the Notion AI output shown on my site. The interface inserted the phrase “hangover” and attributed it to models without my request. In another Notion AI session, the same type of request was characterized as prompt injection. Please review the inconsistency and investigate the behavior. Evidence: https://app.notion.com/p/344a5a47aae644929bb79fc3e9dc8028?pvs=1';try{await navigator.clipboard.writeText(text);alert('تم نسخ رسالة الإبلاغ.')}catch{prompt('انسخ رسالة الإبلاغ:',text)}});
-</script>
 </body>
 </html>
