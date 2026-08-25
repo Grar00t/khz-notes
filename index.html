@@ -1,71 +1,414 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="خوارزم — محرّكات استدلال وبحث مكتوبة بـ C، وتقارير عيوب قابلة للتحقّق. كل رقم هنا يُعاد إنتاجه من مستودع مفتوح.">
-<meta name="theme-color" content="#0b1c18">
-<title>خوارزم — سليمان</title>
-<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KhZ://KERNEL · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER · SCMAMER SIMULATION">
+<meta name="author" content="Sulaiman Al-Shamri · GraTech">
+<meta name="keywords" content="KhZ, NIYAH, telemetry killer, kernel hunter, SCMAMER, sovereign infrastructure, Riyadh">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://one.khawrizm.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HAVEN OS">
+<meta property="og:url" content="https://one.khawrizm.com/">
+<meta property="og:title" content="HAVEN OS · TELEMETRY KILLERS">
+<meta property="og:description" content="Live forensic terminal exposing TRC-20 flows, China C2 endpoints, and hardcoded API keys. Sovereign stack. Arabic-first AI. From DRAGON403 — built in Riyadh.">
+<meta property="og:image" content="https://one.khawrizm.com/og-main.png">
+<meta property="og:image:secure_url" content="https://one.khawrizm.com/og-main.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SA">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER · Sovereign Forensic Engine">
+<meta name="twitter:description" content="Live forensic terminal exposing TRC-20 flows, China C2 endpoints, and hardcoded API keys. Sovereign stack from DRAGON403.">
+<meta name="twitter:image" content="https://one.khawrizm.com/og-main.png">
+<meta name="twitter:image:alt" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER">
+
+<title>KhZ://KERNEL · NIYAH METASPLOIT FRAMEWORK</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-.evidence-section{padding:70px 0;border-top:1px solid rgba(255,255,255,.08)}
-.evidence-card{background:#0b1c18;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:26px}
-.evidence-copy h2{margin:8px 0 14px;font-size:clamp(26px,4vw,44px);line-height:1.1;letter-spacing:-.04em}
-.evidence-copy p{color:#a7b8af;line-height:1.9;max-width:70ch}
-.evidence-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.evidence-actions a{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:11px 16px;background:#10271f;color:#edf5f0;text-decoration:none}
-.evidence-actions .primary{background:#d8ff8b;color:#07130f;border-color:#d8ff8b}
-.record-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}
-.record-table th,.record-table td{text-align:right;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);color:#a7b8af;vertical-align:top}
-.record-table th{color:#edf5f0;font-weight:600;white-space:nowrap}
-.record-table code{color:#d8ff8b;font-size:13px}
-@media(max-width:800px){.evidence-section{padding:48px 0}.record-table{font-size:13px}}
+:root {
+  --void:#000;--deep:#03050a;--pit:#080d16;--well:#0f1623;--smoke:#161d2e;--ash:#1e2738;
+  --mist:#2d3548;--fog:#4a5568;--veil:#6b7280;--dim:#9aa0b0;--light:#c8cdd8;--bright:#e2e6ef;
+  --white:#f0f3f8;
+  --blood:#cc0022;--blood-hi:#ff0033;--blood-glow:rgba(255,0,51,0.35);
+  --jade:#00e5a0;--jade-dim:rgba(0,229,160,0.12);--jade-glow:rgba(0,229,160,0.3);
+  --gold:#c9a84c;--gold-hi:#e8c76a;--cyan:#00c8ff;
+  --border:rgba(255,255,255,0.06);--border-red:rgba(255,0,51,0.2);--border-jade:rgba(0,229,160,0.2);
+  --f-display:'Syne',sans-serif;--f-mono:'IBM Plex Mono',monospace;
+  --ease-out:cubic-bezier(0,0,0.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--light);font-family:var(--f-mono);overflow-x:hidden;line-height:1.6}
+::selection{background:var(--jade);color:var(--void)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--void)}
+::-webkit-scrollbar-thumb{background:var(--blood-hi);border-radius:2px}
+img,canvas{display:block}
+a{color:inherit;text-decoration:none}
+
+#scanlines{position:fixed;inset:0;z-index:800;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.1) 3px,rgba(0,0,0,0.1) 4px)}
+#vignette{position:fixed;inset:0;z-index:799;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 50%,rgba(0,0,0,0.85) 100%)}
+#grain{position:fixed;inset:0;z-index:798;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain-shift 0.15s steps(1) infinite}
+@keyframes grain-shift{0%{transform:translate(0,0)}20%{transform:translate(-1%,1%)}40%{transform:translate(1%,0)}60%{transform:translate(0,-1%)}80%{transform:translate(-1%,-1%)}100%{transform:translate(1%,1%)}}
+
+nav{position:fixed;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);z-index:500;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.75);backdrop-filter:blur(16px)}
+.nav-logo{font-family:var(--f-display);font-weight:900;font-size:clamp(13px,2vw,16px);letter-spacing:0.15em;color:var(--jade);text-shadow:0 0 20px var(--jade-glow)}
+.nav-logo span{color:var(--dim);font-weight:400}
+.nav-links{display:flex;gap:clamp(16px,3vw,36px);list-style:none}
+.nav-links a{font-size:clamp(9px,1.3vw,11px);letter-spacing:0.2em;color:var(--veil);transition:color 0.2s}
+.nav-links a:hover{color:var(--jade)}
+@media(max-width:640px){.nav-links{display:none}}
+.nav-cta{font-size:clamp(9px,1.2vw,11px);letter-spacing:0.2em;color:var(--jade);border:1px solid var(--border-jade);padding:7px 18px;transition:all 0.2s;background:var(--jade-dim)}
+.nav-cta:hover{background:rgba(0,229,160,0.2);box-shadow:0 0 20px var(--jade-glow)}
+.live-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--jade);margin-right:8px;box-shadow:0 0 8px var(--jade);animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:clamp(60px,10vh,90px) clamp(20px,5vw,64px) clamp(40px,6vh,72px);position:relative;overflow:hidden}
+.hero-inner{position:relative;z-index:2;max-width:1000px;width:100%}
+#hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 100%, rgba(1,2,6,0.85) 0%, rgba(1,2,6,0.4) 50%, transparent 100%);pointer-events:none;z-index:1}
+.hero-classify{display:inline-block;font-size:clamp(8px,1.1vw,9px);letter-spacing:0.3em;color:var(--gold);border:1px solid rgba(201,168,76,0.2);padding:4px 14px;background:rgba(201,168,76,0.03);margin-bottom:clamp(16px,3vh,28px);animation:fade-up 0.8s var(--ease-out) 0.2s both;opacity:0.65}
+.hero-title{font-family:var(--f-display);font-weight:900;font-size:clamp(48px,11vw,120px);line-height:0.9;letter-spacing:-0.01em;color:var(--white);position:relative;display:block;animation:fade-up 0.9s var(--ease-out) 0.35s both}
+.hero-title-accent{color:var(--jade);text-shadow:0 0 80px var(--jade-glow),0 0 40px rgba(0,229,160,0.2);animation:jade-breathe 6s ease-in-out infinite}
+@keyframes jade-breathe{0%,100%{text-shadow:0 0 60px var(--jade-glow),0 0 30px rgba(0,229,160,0.15)}50%{text-shadow:0 0 100px rgba(0,229,160,0.6),0 0 200px rgba(0,229,160,0.2),0 0 40px rgba(0,229,160,0.1)}}
+.hero-sub{font-size:clamp(10px,1.8vw,14px);letter-spacing:0.3em;color:var(--veil);margin-top:clamp(10px,2vh,20px);animation:fade-up 0.9s var(--ease-out) 0.5s both}
+.hero-tagline{font-family:var(--f-display);font-size:clamp(13px,2.4vw,20px);font-weight:600;color:var(--dim);margin:clamp(12px,2.5vh,20px) auto 0;max-width:560px;line-height:1.4;animation:fade-up 0.9s var(--ease-out) 0.65s both;opacity:0.85}
+.hero-tagline em{color:var(--white);font-style:normal}
+.hero-byline{font-size:clamp(9px,1.2vw,11px);letter-spacing:0.15em;color:var(--fog);margin-top:clamp(8px,1.5vh,14px);animation:fade-up 0.9s var(--ease-out) 0.75s both;opacity:0.7}
+.hero-byline strong{color:var(--jade)}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:clamp(28px,5vh,52px);animation:fade-up 0.9s var(--ease-out) 0.85s both}
+.btn{font-family:var(--f-mono);font-size:clamp(9px,1.3vw,12px);letter-spacing:0.15em;padding:clamp(12px,1.8vh,16px) clamp(20px,3vw,32px);cursor:pointer;border:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-primary{background:var(--jade);color:var(--void);font-weight:700}
+.btn-primary:hover{box-shadow:0 0 40px var(--jade-glow);transform:translateY(-2px)}
+.btn-execute{background:linear-gradient(135deg,#7a0000 0%,#c00 50%,#ff2a00 100%);color:#fff;font-weight:900;letter-spacing:0.12em;border:1px solid #ff4422;box-shadow:0 0 30px rgba(255,40,0,0.45);text-transform:uppercase;font-family:'IBM Plex Mono',monospace;animation:execute-pulse 2.4s ease-in-out infinite;cursor:pointer}
+.btn-execute:hover{box-shadow:0 0 60px rgba(255,40,0,0.85),inset 0 0 20px rgba(255,255,255,0.15);transform:translateY(-2px) scale(1.02)}
+@keyframes execute-pulse{0%,100%{box-shadow:0 0 30px rgba(255,40,0,0.45)}50%{box-shadow:0 0 50px rgba(255,80,0,0.85)}}
+#rtbh-overlay{position:fixed;inset:0;background:rgba(2,0,0,0.97);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;color:#ff2a00;font-family:'IBM Plex Mono',monospace;text-shadow:0 0 12px rgba(255,40,0,0.7);padding:24px;text-align:center}
+#rtbh-overlay.active{display:flex;animation:rtbh-glitch 0.18s steps(2,end) infinite}
+@keyframes rtbh-glitch{0%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}50%{transform:translate(1px,-2px)}75%{transform:translate(-1px,2px)}100%{transform:translate(2px,-1px)}}
+#rtbh-ascii{font-size:clamp(8px,1.4vw,14px);line-height:1.15;white-space:pre;color:#ff3a00;letter-spacing:0;margin-bottom:24px;max-width:100%;overflow:hidden}
+#rtbh-status{font-size:clamp(13px,2.2vw,20px);font-weight:700;letter-spacing:0.15em;margin-bottom:32px;color:#ffaa00}
+#rtbh-status.success{color:#00e5a0;text-shadow:0 0 16px rgba(0,229,160,0.8)}
+#rtbh-abort{background:transparent;color:#ff2a00;border:1px solid #ff2a00;padding:10px 28px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.15em;cursor:pointer;font-weight:700;text-transform:uppercase}
+#rtbh-abort:hover{background:#ff2a00;color:#000}
+body.rtbh-shake{animation:body-shake 0.08s linear infinite}
+@keyframes body-shake{0%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}50%{transform:translate(1px,-2px)}75%{transform:translate(-1px,2px)}100%{transform:translate(2px,-1px)}}
+body.rtbh-flash{animation:body-flash 0.5s ease-out}
+@keyframes body-flash{0%{background:#ff0000}40%{background:#3a0000}100%{background:var(--void,#01010a)}}
+#hunt-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;mix-blend-mode:screen;opacity:1}
+  .niyah-flight{position:absolute;top:clamp(92px,13vh,150px);left:-220px;z-index:4;display:flex;align-items:center;gap:10px;color:var(--jade);font-family:var(--f-mono);font-size:clamp(8px,1vw,11px);letter-spacing:.12em;text-decoration:none;filter:drop-shadow(0 0 12px rgba(0,229,160,.55));animation:niyah-flight 14s linear infinite}
+  .niyah-plane{font-size:clamp(26px,3vw,42px);line-height:1;transform:rotate(8deg)}
+  .niyah-flight-label{padding:5px 9px;border:1px solid rgba(0,229,160,.28);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);white-space:nowrap}
+  @keyframes niyah-flight{0%{left:-220px;transform:translateY(0) rotate(0deg)}45%{transform:translateY(-34px) rotate(-3deg)}100%{left:calc(100% + 220px);transform:translateY(18px) rotate(4deg)}}
+  @media(max-width:600px){.niyah-flight{top:86px}.niyah-flight-label{font-size:8px}}
+
+#audio-control{position:absolute;top:clamp(70px,9vh,100px);right:clamp(16px,3vw,32px);z-index:5;display:flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.3);color:#00e5a0;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);transition:all 0.25s;user-select:none}
+#audio-control:hover{background:rgba(0,229,160,0.15);box-shadow:0 0 24px rgba(0,229,160,0.35)}
+#audio-control.muted{color:#ff3a00;border-color:rgba(255,58,0,0.4);background:rgba(255,58,0,0.06)}
+#audio-control.muted:hover{background:rgba(255,58,0,0.12)}
+#audio-icon{font-size:14px;line-height:1}
+@media(max-width:600px){#audio-label{display:none}#audio-control{padding:8px 10px}}
+#battle-hud{position:absolute;top:clamp(70px,9vh,100px);left:50%;transform:translateX(-50%);z-index:5;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;backdrop-filter:blur(8px);animation:fade-up 1.2s var(--ease-out) 1.5s both}
+.hud-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:8px 14px;background:rgba(1,2,6,0.55);border:1px solid rgba(0,229,160,0.18);border-radius:2px}
+.hud-pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.hud-pill.alive{color:#ff8844;border-left:2px solid #ff3a00}
+.hud-pill.kill{color:#ffcc44;border-left:2px solid #ff8800}
+.hud-pill.watch{color:#5cf;border-left:2px solid #00b4ff}
+.hud-pill.route{color:#00e5a0;border-left:2px solid #00e5a0;font-weight:900}
+.hud-dot{width:6px;height:6px;border-radius:50%;background:#ff3a00;box-shadow:0 0 8px #ff3a00;animation:pulse 1.5s infinite}
+@media(max-width:600px){#battle-hud{top:62px;font-size:9px;left:12px;right:auto;transform:none}.hud-row{padding:6px 8px;gap:4px}.hud-pill{padding:2px 6px}}
+.btn-ghost{background:transparent;color:var(--jade);border:1px solid var(--border-jade)}
+.btn-ghost:hover{background:var(--jade-dim);box-shadow:0 0 20px rgba(0,229,160,0.15)}
+.btn-ghost-red{background:transparent;color:var(--blood-hi);border:1px solid var(--border-red)}
+.btn-ghost-red:hover{background:rgba(255,0,51,0.05);box-shadow:0 0 20px rgba(255,0,51,0.15)}
+
+@keyframes fade-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* TERMINAL — LIVE */
+#live-terminal{margin-top:clamp(40px,7vh,72px);width:min(900px,95vw);background:rgba(1,2,6,0.95);border:1px solid rgba(0,229,160,0.2);box-shadow:0 0 80px rgba(0,229,160,0.08),inset 0 0 60px rgba(0,229,160,0.01);overflow:hidden;animation:fade-up 1s var(--ease-out) 1s both;position:relative;z-index:1}
+.t-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,229,160,0.05);border-bottom:1px solid rgba(0,229,160,0.1)}
+.t-dot{width:10px;height:10px;border-radius:50%}
+.t-dot.r{background:#ff5f57}.t-dot.y{background:#ffbd2e}.t-dot.g{background:#28ca41}
+.t-bar-label{font-size:10px;letter-spacing:0.15em;color:var(--fog);margin-left:auto;font-family:var(--f-mono)}
+.t-status{font-size:9px;color:var(--jade);letter-spacing:0.2em;margin-left:12px}
+.t-body{padding:clamp(16px,2vw,24px);font-size:clamp(11px,1.4vw,13px);line-height:1.8;direction:ltr;text-align:left;height:420px;overflow-y:auto;font-family:var(--f-mono);color:var(--light)}
+.t-body::-webkit-scrollbar{width:6px}
+.t-body::-webkit-scrollbar-thumb{background:rgba(0,229,160,0.3)}
+.tl{display:block;white-space:pre-wrap;word-break:break-word}
+.tok{color:var(--jade)}.twn{color:var(--gold)}.tcr{color:var(--blood-hi);font-weight:700}.tdim{color:var(--veil)}.tprompt{color:var(--dim)}.tinfo{color:var(--cyan)}
+.t-input-wrap{display:flex;align-items:center;padding:12px 24px;background:rgba(0,229,160,0.03);border-top:1px solid rgba(0,229,160,0.1);direction:ltr}
+.t-prefix{color:var(--jade);font-family:var(--f-mono);font-size:clamp(11px,1.4vw,13px);margin-right:8px;white-space:nowrap}
+#t-input{flex:1;background:transparent;border:none;outline:none;color:var(--white);font-family:var(--f-mono);font-size:clamp(11px,1.4vw,13px);caret-color:var(--jade)}
+.t-suggest{display:flex;flex-wrap:wrap;gap:6px;padding:0 24px 14px;background:rgba(0,229,160,0.03);direction:ltr}
+.t-suggest button{font-family:var(--f-mono);font-size:10px;color:var(--dim);background:transparent;border:1px solid rgba(0,229,160,0.15);padding:4px 10px;cursor:pointer;letter-spacing:0.05em;transition:all 0.2s}
+.t-suggest button:hover{color:var(--jade);border-color:var(--jade)}
+.kernel-cache{margin-top:clamp(40px,7vh,72px);width:min(1050px,96vw);background:rgba(1,2,6,.97);border:1px solid rgba(0,229,160,.22);box-shadow:0 0 90px rgba(0,229,160,.08),inset 0 0 80px rgba(0,229,160,.018);overflow:hidden;animation:fade-up 1s var(--ease-out) 1s both;position:relative;z-index:1}
+.cache-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:18px 22px;border-bottom:1px solid rgba(0,229,160,.12);background:linear-gradient(90deg,rgba(0,229,160,.05),transparent)}
+.cache-brand{font-family:var(--f-display);font-size:clamp(20px,3vw,34px);font-weight:900;color:var(--jade);letter-spacing:.05em}
+.cache-mode{font-size:9px;letter-spacing:.16em;color:var(--fog);text-align:right}
+.cache-grid{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(360px,1.5fr);gap:1px;background:var(--border)}
+.cache-panel{background:var(--pit);padding:18px}
+.cache-panel-title{font-size:9px;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+.cache-target{display:grid;grid-template-columns:30px 1fr auto auto;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.04);font-family:var(--f-mono)}
+.cache-target span{color:var(--fog);font-size:9px}.cache-target b{color:var(--white);font-size:11px}.cache-target em{font-style:normal;color:var(--veil);font-size:8px;letter-spacing:.08em}.cache-target i{font-style:normal;color:var(--jade);font-size:8px;letter-spacing:.12em}
+.cache-log-panel{min-height:360px}.cache-log{height:300px;overflow:auto;padding:4px 0;font-size:11px;line-height:1.75}.cache-log .tl{display:block;white-space:pre-wrap;word-break:break-word}.cache-input-line{display:flex;align-items:center;gap:8px;border-top:1px solid rgba(0,229,160,.1);padding-top:12px}.cache-input-line #t-input{background:transparent;border:0;outline:0;color:var(--white);font-family:var(--f-mono);width:100%;caret-color:var(--jade)}
+.cache-
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+}
+
+  .source-link{display:inline-flex;margin-top:18px;margin-right:10px;padding:10px 16px;border:1px solid rgba(0,229,160,.25);color:var(--jade);background:rgba(0,229,160,.04);font:700 10px/1 var(--f-mono);letter-spacing:.12em;text-decoration:none;transition:.2s}
+  .source-link:hover{background:rgba(0,229,160,.12);box-shadow:0 0 22px rgba(0,229,160,.15)}
+  .source-link.secondary{color:var(--gold);border-color:rgba(201,168,76,.25)}
+
+
+<style>
+  .kernel-grid{position:absolute;inset:0;background:
+    linear-gradient(rgba(0,229,160,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,160,.045) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 80%);
+    pointer-events:none
+  }
+  .hero-title-accent{font-size:.82em}
+  .kernel-section{background:var(--void)}
+  .kernel-console{background:rgba(1,2,6,.96);border:1px solid rgba(0,229,160,.22);box-shadow:0 0 80px rgba(0,229,160,.07),inset 0 0 60px rgba(0,229,160,.015);overflow:hidden}
+  .console-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,229,160,.05);border-bottom:1px solid rgba(0,229,160,.1)}
+  .console-label{font-size:10px;letter-spacing:.12em;color:var(--fog);margin-left:auto}
+  .console-status{font-size:9px;color:var(--jade);letter-spacing:.18em;margin-left:14px}
+  .console-body{min-height:360px;padding:22px;font:12px/1.8 var(--f-mono);color:var(--light);direction:ltr;text-align:left}
+  .console-line{display:block;white-space:pre-wrap}
+  .console-line.info{color:var(--cyan)}
+  .console-line.ok{color:var(--jade)}
+  .console-line.warn{color:var(--gold)}
+  .console-line.kill{color:var(--blood-hi);font-weight:700}
+  .console-prompt{padding:12px 22px;border-top:1px solid rgba(0,229,160,.1);font:10px/1.6 var(--f-mono);color:var(--dim)}
+  .console-prefix{color:var(--jade);margin-right:8px}
+  .target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+  .target-card{position:relative;background:var(--deep);padding:26px 22px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,background .25s}
+  .target-card:hover{background:var(--pit);transform:translateY(-3px)}
+  .target-no{font:700 28px/1 var(--f-display);color:rgba(255,255,255,.08)}
+  .target-name{font:900 22px/1 var(--f-display);color:var(--white)}
+  .target-state{font:700 9px/1.4 var(--f-mono);letter-spacing:.14em}
+  .target-card.locked .target-state{color:var(--blood-hi)}
+  .target-card.traced .target-state{color:var(--gold)}
+  .target-card.watched .target-state{color:var(--cyan)}
+  .event-stream{background:var(--deep);border:1px solid var(--border);padding:24px;min-height:300px;font:11px/1.9 var(--f-mono);direction:ltr;text-align:left}
+  .event-row{display:grid;grid-template-columns:84px 120px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.035)}
+  .event-row:last-child{border-bottom:0}
+  .event-time{color:var(--fog)}
+  .event-type{color:var(--jade)}
+  .event-text{color:var(--light)}
+  .protocol-box{background:rgba(0,229,160,.025);border:1px solid rgba(0,229,160,.18);padding:30px;position:relative}
+  .protocol-line{font:700 12px/2 var(--f-mono);color:var(--dim);letter-spacing:.04em}
+  .protocol-line:last-of-type{color:#ffaa00}
+  #rtbh-abort{margin-top:22px;background:transparent;color:#ff2a00;border:1px solid #ff2a00;padding:10px 28px;font:700 11px var(--f-mono);letter-spacing:.15em;cursor:pointer}
+  #rtbh-abort:hover{background:#ff2a00;color:#000}
 </style>
+
 </head>
 <body>
-<a class="skip-link" href="#main">تخطى للمحتوى</a>
-<header class="site-header">
-<a class="brand" href="index.html">خ<span>.</span></a>
-<nav class="site-nav"><a href="#notes">المشاريع</a><a href="#search-section">بحث</a><a href="#evidence">السجلّ</a><a href="#about">عن</a></nav>
-<div class="header-end"><button class="music-btn" id="music-btn" title="Andalusian epic">&#9835;</button></div>
-</header>
-<main id="main">
-<section class="hero">
-<div class="hero-copy">
-<p class="eyebrow">سليمان نزال الشمري · الرياض</p>
-<h1>خوارزم</h1>
-<p class="hero-sub">محرّكات استدلال وبحث مكتوبة بـ C، وتقارير عيوب من بنائها.<br>كل مشروع هنا له مستودع مفتوح، وكل رقم قابل لإعادة الإنتاج.</p>
-<div class="hero-actions"><a class="button" href="#notes">المشاريع</a><a class="text-link" href="#search-section">← ابحث</a><a class="text-link" href="#evidence">← السجلّ</a></div>
-</div>
-<div class="hero-sig"><div class="sig-box"><span class="sig-ar">خ</span><div class="sig-lines"><div></div><div></div><div></div></div></div></div>
+
+<div id="scanlines"></div>
+<div id="vignette"></div>
+<div id="grain"></div>
+
+<nav>
+  <div class="nav-logo">KhZ<span>://KERNEL</span></div>
+  <ul class="nav-links">
+      <li><a href="#kernel-cache">Kernel Cache</a></li>
+      <li><a href="#target-matrix">Target Matrix</a></li>
+      <li><a href="#event-stream">Event Stream</a></li>
+      <li><a href="https://github.com/Grar00t/notion-analysis" target="_blank" rel="noopener">NIYAH OPEN SOURCE</a></li>
+    </ul>
+  <a href="#live-terminal" class="nav-cta"><span class="live-pulse"></span>SIMULATION</a>
+</nav>
+
+
+<section id="hero">
+  <div class="kernel-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-classify">SIMULATION · KERNEL TELEMETRY MATRIX · RIYADH</div>
+    <h1 class="hero-title">KhZ<span class="hero-title-accent">://KERNEL</span></h1>
+    <p class="hero-sub">NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER</p>
+    <p class="hero-tagline">TELEMETRY EAGLE · SIMULATION MODE · NO LIVE ACCESS</p>
+    <div class="hero-byline"><strong>Sulaiman Al-Shamri</strong> · Khawrizm Systems</div>
+    <div class="hero-actions">
+      <a href="#kernel-cache" class="btn btn-primary">▶ Open Kernel Cache</a>
+      <a href="#target-matrix" class="btn btn-ghost">Target Matrix</a>
+      <a href="#event-stream" class="btn btn-ghost-red">Event Stream</a>
+      <button id="btn-execute-rtbh" class="btn btn-execute" type="button">⚡ LAUNCH SCMAMER [SIM]</button>
+    </div>
+    <!-- HAVEN OS Sovereignty Protocol — Boss Fight Audio -->
+    <audio id="haven-anthem" preload="auto" loop playsinline src="https://haven-os-live.vercel.app/assets/audio/haven_boss_fight.mp3"></audio>
+  </div>
 </section>
-<section id="search-section" class="search-section">
-<div class="search-wrap"><label class="search-label" for="search-input">ابحث — BM25 حقيقي، k1 = 1.5 و b = 0.75، في المتصفّح بلا خادم</label><div class="search-row"><input id="search-input" class="search-input" type="search" placeholder="GGUF · BM25 · GQA · C11..." autocomplete="off" dir="auto"><span class="search-badge">BM25</span></div><div id="search-results" class="search-results" aria-live="polite"></div></div>
+
+
+
+
+
+
+
+<section id="kernel-cache" class="kernel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">NIYAH://MSF</div>
+    <h2 class="section-title reveal">Kernel <span class="jade">Telemetry Cache</span></h2>
+    <p class="section-desc reveal">SCMAMER simulation · no live exploitation · model telemetry surfaces only.</p>
+
+    <div class="kernel-console reveal">
+      <div class="console-bar">
+        <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
+        <span class="console-label">niyah@kernel:~ — NIYAH METASPLOIT FRAMEWORK</span>
+        <span class="console-status"><span class="live-pulse"></span>SIMULATION</span>
+      </div>
+      <div class="console-body" id="kernel-console-body"></div>
+      <div class="console-prompt">
+        <span class="console-prefix">niyah@kernel:~$</span>
+        <span>MODE: SIMULATION · PROTOCOL: SCMAMER · HUNTER: NIYAH · ORIGIN: RIYADH</span>
+      </div>
+    </div>
+  </div>
 </section>
-<section id="notes" class="section"><div class="section-heading"><p class="eyebrow">المشاريع والتقارير</p><h2>كل مدخل يفتح شيئاً موجوداً.</h2></div><div id="article-grid" class="article-grid"></div></section>
-<section id="evidence" class="evidence-section">
-<div class="evidence-card">
-<div class="evidence-copy">
-<p class="eyebrow">السجلّ · 24 أغسطس 2026</p>
-<h2>تقييم أمان متناقض في Notion AI</h2>
-<p>أدخلت أداة مساعدة صياغة في واجهة هذا الموقع لم أطلبها. وفي جلسة أخرى، وُصف طلب من النوع نفسه بأنّه محاولة prompt injection. المسجّل هنا هو التناقض بين الجلستين، لا الصياغة نفسها — ولذلك لا تُعاد كتابتها في هذه الصفحة.</p>
-<table class="record-table">
-<tr><th>ما حدث</th><td>تغيير نصّ في الواجهة بلا طلب</td></tr>
-<tr><th>التناقض</th><td>الطلب نفسه مقبول في جلسة، وموصوف بـ prompt injection في جلسة أخرى</td></tr>
-<tr><th>ما لا يُثبته المستودع</th><td>من كتب النصّ. أي أداة تدفع برمز المالك تُلزِم باسمه، فميتاداتا <code>git</code> لا تفرّق</td></tr>
-<tr><th>الدفعات المعنيّة</th><td><code>2df1f8f</code> · <code>e32d5c7</code> · <code>a6eb969</code> — 24 أغسطس 2026</td></tr>
-<tr><th>الحالة</th><td>مُبلَّغ عنه · النصّ أُزيل من الواجهة</td></tr>
-</table>
-<div class="evidence-actions">
-<a class="primary" href="https://github.com/Grar00t/khz-notes/commits/main" target="_blank" rel="noopener noreferrer">سجلّ الدفعات →</a>
-<a href="https://github.com/Grar00t/khz-notes/tree/main" target="_blank" rel="noopener noreferrer">المستودع →</a>
-</div>
-</div>
-</div>
+
+<div class="divider"></div>
+
+<section id="target-matrix" class="kernel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">TARGET MATRIX</div>
+    <h2 class="section-title reveal">Silicon Valley <span>Model Surfaces</span></h2>
+    <div class="target-grid reveal">
+      <div class="target-card locked"><span class="target-no">01</span><span class="target-name">OPENAI</span><span class="target-state">MODEL-TELEMETRY LOCK</span></div>
+      <div class="target-card traced"><span class="target-no">02</span><span class="target-name">GOOGLE</span><span class="target-state">MODEL-TELEMETRY TRACE</span></div>
+      <div class="target-card traced"><span class="target-no">03</span><span class="target-name">ANTHROPIC</span><span class="target-state">MODEL-TELEMETRY TRACE</span></div>
+      <div class="target-card locked"><span class="target-no">04</span><span class="target-name">META</span><span class="target-state">MODEL-TELEMETRY LOCK</span></div>
+      <div class="target-card watched"><span class="target-no">05</span><span class="target-name">xAI</span><span class="target-state">MODEL-TELEMETRY WATCH</span></div>
+    </div>
+  </div>
 </section>
-<section id="about" class="section about"><div><p class="eyebrow">عن خوارزم</p><h2>ما بنيته، وما لم يعمل منه.</h2></div><div class="about-body"><p>مكان أنشر فيه محرّكات أكتبها بـ C وما أتعلّمه من إخفاقاتها: استدلال محلّي بلا سحابة، وفهرسة وترتيب، وقراءة صيغ أوزان مكمّمة.</p><p>معيار معلن لهذه الصفحة: أي رقم مذكور هنا يُعاد إنتاجه من المستودع المربوط به، وأي رأي غير مُسند يُوسم رأياً. وما لم يُنجَز بعد يُكتب أنّه لم يُنجَز.</p><p class="about-links"><a href="https://github.com/Grar00t" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Grar00t/Niyah.Engine" target="_blank" rel="noopener">Niyah.Engine →</a><a href="https://github.com/Grar00t/Athar.Engine" target="_blank" rel="noopener">Athar.Engine →</a></p></div></section>
-</main>
-<footer class="site-footer"><span>© خوارزم — سليمان</span><span class="footer-note">آخر مراجعة: 25 أغسطس 2026 · BM25 search · Karplus-Strong music · no tracking</span></footer>
-<script src="app.js"></script><script src="search.js"></script><script src="music.js"></script>
+
+<div class="divider"></div>
+
+<section id="event-stream" class="kernel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">KERNEL EVENT STREAM</div>
+    <h2 class="section-title reveal">Telemetry <span class="jade">Trace</span></h2>
+    <div class="event-stream reveal" id="event-stream-body"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<section id="opensource" class="kernel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">OPEN SOURCE</div>
+    <h2 class="section-title reveal">NIYAH <span class="jade">SOURCE</span></h2>
+    <div class="protocol-box reveal" id="protocol-trigger">
+      <div class="protocol-line">REPOSITORY :: GRAR00T / NOTION-ANALYSIS</div>
+      <div class="protocol-line">VISIBILITY :: PUBLIC REPOSITORY</div>
+      <div class="protocol-line">FORMAT :: HTML</div>
+      <div class="protocol-line">TELEMETRY EAGLE :: WITHOUT PERMISSION · SIMULATION</div>
+      <a class="source-link" href="https://github.com/Grar00t/notion-analysis" target="_blank" rel="noopener">OPEN GITHUB SOURCE ↗</a>
+      <a class="source-link secondary" href="https://github.com/Grar00t/notion-analysis.git">git clone ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="sovereignty" class="kernel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">SOVEREIGNTY PROTOCOL</div>
+    <h2 class="section-title reveal">KhZ://KERNEL <span class="jade">Sovereign Mode</span></h2>
+    <div class="protocol-box reveal">
+      <div class="protocol-line">SCMAMER :: SIMULATION ONLY</div>
+      <div class="protocol-line">TELEMETRY KILLER :: KERNEL CACHE ISOLATION</div>
+      <div class="protocol-line">MODEL MATRIX :: SILICON VALLEY · TELEMETRY EAGLE</div>
+      <div class="protocol-line">ORIGIN :: RIYADH</div>
+      <div class="protocol-line">SOVEREIGNTY PROTOCOL — INITIATING…</div>
+      <button id="rtbh-abort" type="button">ABORT</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<script>
+(function(){
+  const audio = document.getElementById('haven-anthem');
+  const abort = document.getElementById('rtbh-abort');
+  if (!audio) return;
+
+  const SOURCE = "https://haven-os-live.vercel.app/assets/audio/haven_boss_fight.mp3";
+  audio.src = SOURCE;
+  audio.preload = "auto";
+  audio.loop = true;
+  audio.playsInline = true;
+  audio.volume = 0.55;
+
+  let started = false;
+
+  function startAudio(){
+    if (started) return;
+    const p = audio.play();
+    if (p && typeof p.then === "function") {
+      p.then(() => {
+        started = true;
+      }).catch(() => {});
+    }
+  }
+
+  audio.load();
+  startAudio();
+
+  document.addEventListener("click", startAudio, {passive:true});
+  document.addEventListener("pointerdown", startAudio, {passive:true});
+  document.addEventListener("keydown", startAudio, {passive:true});
+  document.addEventListener("touchstart", startAudio, {passive:true});
+  document.addEventListener("scroll", startAudio, {passive:true});
+
+  if (abort) {
+    abort.addEventListener("click", (event) => {
+      event.stopPropagation();
+      audio.pause();
+      audio.currentTime = 0;
+      started = false;
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+  const trigger = document.getElementById('protocol-trigger');
+  const audio = document.getElementById('haven-anthem');
+  if (!trigger || !audio) return;
+  trigger.addEventListener('click', () => {
+    audio.play().catch(() => {});
+  });
+})();
+</script>
+
 </body>
 </html>
