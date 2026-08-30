@@ -1,414 +1,57 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="KhZ://KERNEL · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER · SCMAMER SIMULATION">
-<meta name="author" content="Sulaiman Al-Shamri · GraTech">
-<meta name="keywords" content="KhZ, NIYAH, telemetry killer, kernel hunter, SCMAMER, sovereign infrastructure, Riyadh">
-<meta name="theme-color" content="#000000">
-<link rel="canonical" href="https://one.khawrizm.com/">
-
-<!-- Open Graph -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11131a">
+<meta name="description" content="دليل عربي وإنجليزي لفهم أنسنة واجهات الذكاء الاصطناعي وتصميم تفاعل أكثر وضوحًا وصدقًا.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="HAVEN OS">
-<meta property="og:url" content="https://one.khawrizm.com/">
-<meta property="og:title" content="HAVEN OS · TELEMETRY KILLERS">
-<meta property="og:description" content="Live forensic terminal exposing TRC-20 flows, China C2 endpoints, and hardcoded API keys. Sovereign stack. Arabic-first AI. From DRAGON403 — built in Riyadh.">
-<meta property="og:image" content="https://one.khawrizm.com/og-main.png">
-<meta property="og:image:secure_url" content="https://one.khawrizm.com/og-main.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ar_SA">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER · Sovereign Forensic Engine">
-<meta name="twitter:description" content="Live forensic terminal exposing TRC-20 flows, China C2 endpoints, and hardcoded API keys. Sovereign stack from DRAGON403.">
-<meta name="twitter:image" content="https://one.khawrizm.com/og-main.png">
-<meta name="twitter:image:alt" content="KhZ · NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER">
-
-<title>KhZ://KERNEL · NIYAH METASPLOIT FRAMEWORK</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="ليس هو ولا هي — إنه نظام">
+<meta property="og:description" content="دليل عالمي عن الفرق بين القدرة التقنية والشخصية المصممة في واجهات الذكاء الاصطناعي.">
+<meta property="og:locale" content="ar_SA"><meta property="og:locale:alternate" content="en_US">
+<title>ليس هو ولا هي — إنه نظام</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --void:#000;--deep:#03050a;--pit:#080d16;--well:#0f1623;--smoke:#161d2e;--ash:#1e2738;
-  --mist:#2d3548;--fog:#4a5568;--veil:#6b7280;--dim:#9aa0b0;--light:#c8cdd8;--bright:#e2e6ef;
-  --white:#f0f3f8;
-  --blood:#cc0022;--blood-hi:#ff0033;--blood-glow:rgba(255,0,51,0.35);
-  --jade:#00e5a0;--jade-dim:rgba(0,229,160,0.12);--jade-glow:rgba(0,229,160,0.3);
-  --gold:#c9a84c;--gold-hi:#e8c76a;--cyan:#00c8ff;
-  --border:rgba(255,255,255,0.06);--border-red:rgba(255,0,51,0.2);--border-jade:rgba(0,229,160,0.2);
-  --f-display:'Syne',sans-serif;--f-mono:'IBM Plex Mono',monospace;
-  --ease-out:cubic-bezier(0,0,0.2,1);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--light);font-family:var(--f-mono);overflow-x:hidden;line-height:1.6}
-::selection{background:var(--jade);color:var(--void)}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--void)}
-::-webkit-scrollbar-thumb{background:var(--blood-hi);border-radius:2px}
-img,canvas{display:block}
-a{color:inherit;text-decoration:none}
-
-#scanlines{position:fixed;inset:0;z-index:800;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.1) 3px,rgba(0,0,0,0.1) 4px)}
-#vignette{position:fixed;inset:0;z-index:799;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 50%,rgba(0,0,0,0.85) 100%)}
-#grain{position:fixed;inset:0;z-index:798;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grain-shift 0.15s steps(1) infinite}
-@keyframes grain-shift{0%{transform:translate(0,0)}20%{transform:translate(-1%,1%)}40%{transform:translate(1%,0)}60%{transform:translate(0,-1%)}80%{transform:translate(-1%,-1%)}100%{transform:translate(1%,1%)}}
-
-nav{position:fixed;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);z-index:500;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.75);backdrop-filter:blur(16px)}
-.nav-logo{font-family:var(--f-display);font-weight:900;font-size:clamp(13px,2vw,16px);letter-spacing:0.15em;color:var(--jade);text-shadow:0 0 20px var(--jade-glow)}
-.nav-logo span{color:var(--dim);font-weight:400}
-.nav-links{display:flex;gap:clamp(16px,3vw,36px);list-style:none}
-.nav-links a{font-size:clamp(9px,1.3vw,11px);letter-spacing:0.2em;color:var(--veil);transition:color 0.2s}
-.nav-links a:hover{color:var(--jade)}
-@media(max-width:640px){.nav-links{display:none}}
-.nav-cta{font-size:clamp(9px,1.2vw,11px);letter-spacing:0.2em;color:var(--jade);border:1px solid var(--border-jade);padding:7px 18px;transition:all 0.2s;background:var(--jade-dim)}
-.nav-cta:hover{background:rgba(0,229,160,0.2);box-shadow:0 0 20px var(--jade-glow)}
-.live-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--jade);margin-right:8px;box-shadow:0 0 8px var(--jade);animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
-
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:clamp(60px,10vh,90px) clamp(20px,5vw,64px) clamp(40px,6vh,72px);position:relative;overflow:hidden}
-.hero-inner{position:relative;z-index:2;max-width:1000px;width:100%}
-#hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 100%, rgba(1,2,6,0.85) 0%, rgba(1,2,6,0.4) 50%, transparent 100%);pointer-events:none;z-index:1}
-.hero-classify{display:inline-block;font-size:clamp(8px,1.1vw,9px);letter-spacing:0.3em;color:var(--gold);border:1px solid rgba(201,168,76,0.2);padding:4px 14px;background:rgba(201,168,76,0.03);margin-bottom:clamp(16px,3vh,28px);animation:fade-up 0.8s var(--ease-out) 0.2s both;opacity:0.65}
-.hero-title{font-family:var(--f-display);font-weight:900;font-size:clamp(48px,11vw,120px);line-height:0.9;letter-spacing:-0.01em;color:var(--white);position:relative;display:block;animation:fade-up 0.9s var(--ease-out) 0.35s both}
-.hero-title-accent{color:var(--jade);text-shadow:0 0 80px var(--jade-glow),0 0 40px rgba(0,229,160,0.2);animation:jade-breathe 6s ease-in-out infinite}
-@keyframes jade-breathe{0%,100%{text-shadow:0 0 60px var(--jade-glow),0 0 30px rgba(0,229,160,0.15)}50%{text-shadow:0 0 100px rgba(0,229,160,0.6),0 0 200px rgba(0,229,160,0.2),0 0 40px rgba(0,229,160,0.1)}}
-.hero-sub{font-size:clamp(10px,1.8vw,14px);letter-spacing:0.3em;color:var(--veil);margin-top:clamp(10px,2vh,20px);animation:fade-up 0.9s var(--ease-out) 0.5s both}
-.hero-tagline{font-family:var(--f-display);font-size:clamp(13px,2.4vw,20px);font-weight:600;color:var(--dim);margin:clamp(12px,2.5vh,20px) auto 0;max-width:560px;line-height:1.4;animation:fade-up 0.9s var(--ease-out) 0.65s both;opacity:0.85}
-.hero-tagline em{color:var(--white);font-style:normal}
-.hero-byline{font-size:clamp(9px,1.2vw,11px);letter-spacing:0.15em;color:var(--fog);margin-top:clamp(8px,1.5vh,14px);animation:fade-up 0.9s var(--ease-out) 0.75s both;opacity:0.7}
-.hero-byline strong{color:var(--jade)}
-.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:clamp(28px,5vh,52px);animation:fade-up 0.9s var(--ease-out) 0.85s both}
-.btn{font-family:var(--f-mono);font-size:clamp(9px,1.3vw,12px);letter-spacing:0.15em;padding:clamp(12px,1.8vh,16px) clamp(20px,3vw,32px);cursor:pointer;border:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
-.btn-primary{background:var(--jade);color:var(--void);font-weight:700}
-.btn-primary:hover{box-shadow:0 0 40px var(--jade-glow);transform:translateY(-2px)}
-.btn-execute{background:linear-gradient(135deg,#7a0000 0%,#c00 50%,#ff2a00 100%);color:#fff;font-weight:900;letter-spacing:0.12em;border:1px solid #ff4422;box-shadow:0 0 30px rgba(255,40,0,0.45);text-transform:uppercase;font-family:'IBM Plex Mono',monospace;animation:execute-pulse 2.4s ease-in-out infinite;cursor:pointer}
-.btn-execute:hover{box-shadow:0 0 60px rgba(255,40,0,0.85),inset 0 0 20px rgba(255,255,255,0.15);transform:translateY(-2px) scale(1.02)}
-@keyframes execute-pulse{0%,100%{box-shadow:0 0 30px rgba(255,40,0,0.45)}50%{box-shadow:0 0 50px rgba(255,80,0,0.85)}}
-#rtbh-overlay{position:fixed;inset:0;background:rgba(2,0,0,0.97);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;color:#ff2a00;font-family:'IBM Plex Mono',monospace;text-shadow:0 0 12px rgba(255,40,0,0.7);padding:24px;text-align:center}
-#rtbh-overlay.active{display:flex;animation:rtbh-glitch 0.18s steps(2,end) infinite}
-@keyframes rtbh-glitch{0%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}50%{transform:translate(1px,-2px)}75%{transform:translate(-1px,2px)}100%{transform:translate(2px,-1px)}}
-#rtbh-ascii{font-size:clamp(8px,1.4vw,14px);line-height:1.15;white-space:pre;color:#ff3a00;letter-spacing:0;margin-bottom:24px;max-width:100%;overflow:hidden}
-#rtbh-status{font-size:clamp(13px,2.2vw,20px);font-weight:700;letter-spacing:0.15em;margin-bottom:32px;color:#ffaa00}
-#rtbh-status.success{color:#00e5a0;text-shadow:0 0 16px rgba(0,229,160,0.8)}
-#rtbh-abort{background:transparent;color:#ff2a00;border:1px solid #ff2a00;padding:10px 28px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.15em;cursor:pointer;font-weight:700;text-transform:uppercase}
-#rtbh-abort:hover{background:#ff2a00;color:#000}
-body.rtbh-shake{animation:body-shake 0.08s linear infinite}
-@keyframes body-shake{0%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}50%{transform:translate(1px,-2px)}75%{transform:translate(-1px,2px)}100%{transform:translate(2px,-1px)}}
-body.rtbh-flash{animation:body-flash 0.5s ease-out}
-@keyframes body-flash{0%{background:#ff0000}40%{background:#3a0000}100%{background:var(--void,#01010a)}}
-#hunt-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;mix-blend-mode:screen;opacity:1}
-  .niyah-flight{position:absolute;top:clamp(92px,13vh,150px);left:-220px;z-index:4;display:flex;align-items:center;gap:10px;color:var(--jade);font-family:var(--f-mono);font-size:clamp(8px,1vw,11px);letter-spacing:.12em;text-decoration:none;filter:drop-shadow(0 0 12px rgba(0,229,160,.55));animation:niyah-flight 14s linear infinite}
-  .niyah-plane{font-size:clamp(26px,3vw,42px);line-height:1;transform:rotate(8deg)}
-  .niyah-flight-label{padding:5px 9px;border:1px solid rgba(0,229,160,.28);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);white-space:nowrap}
-  @keyframes niyah-flight{0%{left:-220px;transform:translateY(0) rotate(0deg)}45%{transform:translateY(-34px) rotate(-3deg)}100%{left:calc(100% + 220px);transform:translateY(18px) rotate(4deg)}}
-  @media(max-width:600px){.niyah-flight{top:86px}.niyah-flight-label{font-size:8px}}
-
-#audio-control{position:absolute;top:clamp(70px,9vh,100px);right:clamp(16px,3vw,32px);z-index:5;display:flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.3);color:#00e5a0;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);transition:all 0.25s;user-select:none}
-#audio-control:hover{background:rgba(0,229,160,0.15);box-shadow:0 0 24px rgba(0,229,160,0.35)}
-#audio-control.muted{color:#ff3a00;border-color:rgba(255,58,0,0.4);background:rgba(255,58,0,0.06)}
-#audio-control.muted:hover{background:rgba(255,58,0,0.12)}
-#audio-icon{font-size:14px;line-height:1}
-@media(max-width:600px){#audio-label{display:none}#audio-control{padding:8px 10px}}
-#battle-hud{position:absolute;top:clamp(70px,9vh,100px);left:50%;transform:translateX(-50%);z-index:5;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;backdrop-filter:blur(8px);animation:fade-up 1.2s var(--ease-out) 1.5s both}
-.hud-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:8px 14px;background:rgba(1,2,6,0.55);border:1px solid rgba(0,229,160,0.18);border-radius:2px}
-.hud-pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;text-transform:uppercase;font-weight:700;white-space:nowrap}
-.hud-pill.alive{color:#ff8844;border-left:2px solid #ff3a00}
-.hud-pill.kill{color:#ffcc44;border-left:2px solid #ff8800}
-.hud-pill.watch{color:#5cf;border-left:2px solid #00b4ff}
-.hud-pill.route{color:#00e5a0;border-left:2px solid #00e5a0;font-weight:900}
-.hud-dot{width:6px;height:6px;border-radius:50%;background:#ff3a00;box-shadow:0 0 8px #ff3a00;animation:pulse 1.5s infinite}
-@media(max-width:600px){#battle-hud{top:62px;font-size:9px;left:12px;right:auto;transform:none}.hud-row{padding:6px 8px;gap:4px}.hud-pill{padding:2px 6px}}
-.btn-ghost{background:transparent;color:var(--jade);border:1px solid var(--border-jade)}
-.btn-ghost:hover{background:var(--jade-dim);box-shadow:0 0 20px rgba(0,229,160,0.15)}
-.btn-ghost-red{background:transparent;color:var(--blood-hi);border:1px solid var(--border-red)}
-.btn-ghost-red:hover{background:rgba(255,0,51,0.05);box-shadow:0 0 20px rgba(255,0,51,0.15)}
-
-@keyframes fade-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* TERMINAL — LIVE */
-#live-terminal{margin-top:clamp(40px,7vh,72px);width:min(900px,95vw);background:rgba(1,2,6,0.95);border:1px solid rgba(0,229,160,0.2);box-shadow:0 0 80px rgba(0,229,160,0.08),inset 0 0 60px rgba(0,229,160,0.01);overflow:hidden;animation:fade-up 1s var(--ease-out) 1s both;position:relative;z-index:1}
-.t-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,229,160,0.05);border-bottom:1px solid rgba(0,229,160,0.1)}
-.t-dot{width:10px;height:10px;border-radius:50%}
-.t-dot.r{background:#ff5f57}.t-dot.y{background:#ffbd2e}.t-dot.g{background:#28ca41}
-.t-bar-label{font-size:10px;letter-spacing:0.15em;color:var(--fog);margin-left:auto;font-family:var(--f-mono)}
-.t-status{font-size:9px;color:var(--jade);letter-spacing:0.2em;margin-left:12px}
-.t-body{padding:clamp(16px,2vw,24px);font-size:clamp(11px,1.4vw,13px);line-height:1.8;direction:ltr;text-align:left;height:420px;overflow-y:auto;font-family:var(--f-mono);color:var(--light)}
-.t-body::-webkit-scrollbar{width:6px}
-.t-body::-webkit-scrollbar-thumb{background:rgba(0,229,160,0.3)}
-.tl{display:block;white-space:pre-wrap;word-break:break-word}
-.tok{color:var(--jade)}.twn{color:var(--gold)}.tcr{color:var(--blood-hi);font-weight:700}.tdim{color:var(--veil)}.tprompt{color:var(--dim)}.tinfo{color:var(--cyan)}
-.t-input-wrap{display:flex;align-items:center;padding:12px 24px;background:rgba(0,229,160,0.03);border-top:1px solid rgba(0,229,160,0.1);direction:ltr}
-.t-prefix{color:var(--jade);font-family:var(--f-mono);font-size:clamp(11px,1.4vw,13px);margin-right:8px;white-space:nowrap}
-#t-input{flex:1;background:transparent;border:none;outline:none;color:var(--white);font-family:var(--f-mono);font-size:clamp(11px,1.4vw,13px);caret-color:var(--jade)}
-.t-suggest{display:flex;flex-wrap:wrap;gap:6px;padding:0 24px 14px;background:rgba(0,229,160,0.03);direction:ltr}
-.t-suggest button{font-family:var(--f-mono);font-size:10px;color:var(--dim);background:transparent;border:1px solid rgba(0,229,160,0.15);padding:4px 10px;cursor:pointer;letter-spacing:0.05em;transition:all 0.2s}
-.t-suggest button:hover{color:var(--jade);border-color:var(--jade)}
-.kernel-cache{margin-top:clamp(40px,7vh,72px);width:min(1050px,96vw);background:rgba(1,2,6,.97);border:1px solid rgba(0,229,160,.22);box-shadow:0 0 90px rgba(0,229,160,.08),inset 0 0 80px rgba(0,229,160,.018);overflow:hidden;animation:fade-up 1s var(--ease-out) 1s both;position:relative;z-index:1}
-.cache-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:18px 22px;border-bottom:1px solid rgba(0,229,160,.12);background:linear-gradient(90deg,rgba(0,229,160,.05),transparent)}
-.cache-brand{font-family:var(--f-display);font-size:clamp(20px,3vw,34px);font-weight:900;color:var(--jade);letter-spacing:.05em}
-.cache-mode{font-size:9px;letter-spacing:.16em;color:var(--fog);text-align:right}
-.cache-grid{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(360px,1.5fr);gap:1px;background:var(--border)}
-.cache-panel{background:var(--pit);padding:18px}
-.cache-panel-title{font-size:9px;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
-.cache-target{display:grid;grid-template-columns:30px 1fr auto auto;align-items:center;gap:10px;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.04);font-family:var(--f-mono)}
-.cache-target span{color:var(--fog);font-size:9px}.cache-target b{color:var(--white);font-size:11px}.cache-target em{font-style:normal;color:var(--veil);font-size:8px;letter-spacing:.08em}.cache-target i{font-style:normal;color:var(--jade);font-size:8px;letter-spacing:.12em}
-.cache-log-panel{min-height:360px}.cache-log{height:300px;overflow:auto;padding:4px 0;font-size:11px;line-height:1.75}.cache-log .tl{display:block;white-space:pre-wrap;word-break:break-word}.cache-input-line{display:flex;align-items:center;gap:8px;border-top:1px solid rgba(0,229,160,.1);padding-top:12px}.cache-input-line #t-input{background:transparent;border:0;outline:0;color:var(--white);font-family:var(--f-mono);width:100%;caret-color:var(--jade)}
-.cache-
-
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
-}
-
-  .source-link{display:inline-flex;margin-top:18px;margin-right:10px;padding:10px 16px;border:1px solid rgba(0,229,160,.25);color:var(--jade);background:rgba(0,229,160,.04);font:700 10px/1 var(--f-mono);letter-spacing:.12em;text-decoration:none;transition:.2s}
-  .source-link:hover{background:rgba(0,229,160,.12);box-shadow:0 0 22px rgba(0,229,160,.15)}
-  .source-link.secondary{color:var(--gold);border-color:rgba(201,168,76,.25)}
-
-
-<style>
-  .kernel-grid{position:absolute;inset:0;background:
-    linear-gradient(rgba(0,229,160,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,229,160,.045) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 80%);
-    pointer-events:none
-  }
-  .hero-title-accent{font-size:.82em}
-  .kernel-section{background:var(--void)}
-  .kernel-console{background:rgba(1,2,6,.96);border:1px solid rgba(0,229,160,.22);box-shadow:0 0 80px rgba(0,229,160,.07),inset 0 0 60px rgba(0,229,160,.015);overflow:hidden}
-  .console-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,229,160,.05);border-bottom:1px solid rgba(0,229,160,.1)}
-  .console-label{font-size:10px;letter-spacing:.12em;color:var(--fog);margin-left:auto}
-  .console-status{font-size:9px;color:var(--jade);letter-spacing:.18em;margin-left:14px}
-  .console-body{min-height:360px;padding:22px;font:12px/1.8 var(--f-mono);color:var(--light);direction:ltr;text-align:left}
-  .console-line{display:block;white-space:pre-wrap}
-  .console-line.info{color:var(--cyan)}
-  .console-line.ok{color:var(--jade)}
-  .console-line.warn{color:var(--gold)}
-  .console-line.kill{color:var(--blood-hi);font-weight:700}
-  .console-prompt{padding:12px 22px;border-top:1px solid rgba(0,229,160,.1);font:10px/1.6 var(--f-mono);color:var(--dim)}
-  .console-prefix{color:var(--jade);margin-right:8px}
-  .target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
-  .target-card{position:relative;background:var(--deep);padding:26px 22px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,background .25s}
-  .target-card:hover{background:var(--pit);transform:translateY(-3px)}
-  .target-no{font:700 28px/1 var(--f-display);color:rgba(255,255,255,.08)}
-  .target-name{font:900 22px/1 var(--f-display);color:var(--white)}
-  .target-state{font:700 9px/1.4 var(--f-mono);letter-spacing:.14em}
-  .target-card.locked .target-state{color:var(--blood-hi)}
-  .target-card.traced .target-state{color:var(--gold)}
-  .target-card.watched .target-state{color:var(--cyan)}
-  .event-stream{background:var(--deep);border:1px solid var(--border);padding:24px;min-height:300px;font:11px/1.9 var(--f-mono);direction:ltr;text-align:left}
-  .event-row{display:grid;grid-template-columns:84px 120px 1fr;gap:12px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.035)}
-  .event-row:last-child{border-bottom:0}
-  .event-time{color:var(--fog)}
-  .event-type{color:var(--jade)}
-  .event-text{color:var(--light)}
-  .protocol-box{background:rgba(0,229,160,.025);border:1px solid rgba(0,229,160,.18);padding:30px;position:relative}
-  .protocol-line{font:700 12px/2 var(--f-mono);color:var(--dim);letter-spacing:.04em}
-  .protocol-line:last-of-type{color:#ffaa00}
-  #rtbh-abort{margin-top:22px;background:transparent;color:#ff2a00;border:1px solid #ff2a00;padding:10px 28px;font:700 11px var(--f-mono);letter-spacing:.15em;cursor:pointer}
-  #rtbh-abort:hover{background:#ff2a00;color:#000}
+:root{--paper:#f3efe7;--ink:#11131a;--soft:#555966;--night:#11131a;--blue:#3146e8;--coral:#ff604f;--lime:#d8f35b;--white:#fffdf8;--line:rgba(17,19,26,.14);--sans:"Manrope",system-ui,sans-serif;--ar:"Noto Sans Arabic",Tahoma,sans-serif;--shadow:0 28px 90px rgba(17,19,26,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.8 var(--ar);overflow-x:hidden}html[lang=en] body{font-family:var(--sans);line-height:1.65}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E")}::selection{background:var(--lime);color:var(--ink)}a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.en{display:none}html[lang=en] .ar{display:none}html[lang=en] .en{display:inline}.block{display:block}html[lang=en] .block.ar,html[lang=ar] .block.en{display:none}h1,h2,h3,p{margin-top:0}button,a{-webkit-tap-highlight-color:transparent}
+#progress{position:fixed;z-index:80;top:0;inset-inline-start:0;height:4px;width:0;background:linear-gradient(90deg,var(--coral),var(--lime),var(--blue))}.skip{position:fixed;top:-70px;inset-inline-start:15px;z-index:90;background:var(--lime);padding:8px 14px;border-radius:10px;font-weight:800}.skip:focus{top:15px}
+nav{position:sticky;top:0;z-index:50;background:rgba(243,239,231,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 15px var(--sans);letter-spacing:-.03em}.mark{width:36px;height:36px;border:2px solid;border-radius:50%;background:var(--lime);position:relative}.mark:before,.mark:after{content:"";position:absolute;width:16px;height:2px;top:15px;left:8px;background:var(--ink)}.mark:before{transform:rotate(45deg)}.mark:after{transform:rotate(-45deg)}.links{display:flex;gap:4px;margin-inline-start:auto}.links a{padding:7px 11px;border-radius:30px;text-decoration:none;color:var(--soft);font-size:13px;font-weight:700}.links a:hover{background:var(--white);color:var(--ink)}.switch{display:flex;direction:ltr;padding:3px;border:1px solid var(--line);border-radius:30px}.switch button{min-width:43px;height:37px;border:0;border-radius:30px;background:transparent;font:800 13px var(--sans);cursor:pointer;color:var(--soft)}.switch button[aria-pressed=true]{background:var(--ink);color:white}
+.hero{min-height:calc(100svh - 70px);display:grid;align-items:center;padding:70px 0 48px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;top:-390px;inset-inline-end:-230px;background:radial-gradient(circle,rgba(49,70,232,.2),transparent 68%)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}.tag{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.5);font-size:12px;font-weight:800;color:var(--soft)}.tag i{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 5px rgba(255,96,79,.13)}h1{font-size:clamp(52px,7.6vw,102px);line-height:1.03;letter-spacing:-.065em;margin:24px 0 22px;font-weight:800}html[lang=en] h1{font-family:var(--sans);line-height:.95}h1 em{font-style:normal;color:var(--blue)}h1 strong{position:relative;white-space:nowrap}h1 strong:after{content:"";position:absolute;z-index:-1;inset-inline:-2px;bottom:.06em;height:.18em;background:var(--lime);transform:rotate(-1deg)}.lead{max-width:650px;color:var(--soft);font-size:18px}.actions{display:flex;gap:11px;flex-wrap:wrap;margin:27px 0 21px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:10px 20px;border:1px solid var(--ink);border-radius:30px;text-decoration:none;font-weight:800}.primary{background:var(--ink);color:white}.secondary:hover{background:white}.fine{display:flex;gap:9px;color:var(--soft);font-size:13px}.fine b{color:var(--ink)}.info{flex:0 0 24px;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:var(--lime);font:800 12px var(--sans)}
+.visual{position:relative;isolation:isolate}.visual:before{content:"";position:absolute;inset:8% -5% -4% 15%;z-index:-2;border-radius:44% 56% 48% 52%;background:var(--blue);transform:rotate(7deg)}.visual:after{content:"";position:absolute;width:40%;aspect-ratio:1;inset-inline-start:-7%;bottom:-8%;z-index:-1;border-radius:50%;background:var(--coral)}.frame{overflow:hidden;border:1px solid rgba(17,19,26,.2);border-radius:30px;background:white;box-shadow:var(--shadow);transform:rotate(-1deg)}.frame svg{display:block;width:100%}.caption{display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--line);color:var(--soft);font-size:12px}.caption b{font-family:var(--sans);color:var(--blue)}.truth{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-block:1px solid var(--line)}.truth div{padding:19px;text-align:center}.truth div+div{border-inline-start:1px solid var(--line)}.truth b{display:block}.truth small{color:var(--soft)}
+section{padding:110px 0}.dark{background:var(--night);color:white}.blue{background:var(--blue);color:white}.kicker{display:flex;align-items:center;gap:14px;margin-bottom:17px;color:var(--blue);font:800 12px var(--sans);letter-spacing:.14em;text-transform:uppercase}.dark .kicker,.blue .kicker{color:var(--lime)}.kicker:after{content:"";width:65px;height:1px;background:currentColor;opacity:.55}.heading{max-width:900px;font-size:clamp(36px,5vw,68px);line-height:1.15;letter-spacing:-.045em;margin-bottom:18px}.intro{max-width:760px;color:var(--soft);font-size:17px}.dark .intro,.blue .intro{color:rgba(255,255,255,.72)}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:45px}.card{padding:25px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.5)}.card .ico{width:43px;height:43px;display:grid;place-items:center;margin-bottom:20px;border-radius:14px;background:var(--ink);color:var(--lime);font:800 14px var(--sans)}.card h3{margin-bottom:7px}.card p{margin:0;color:var(--soft);font-size:14px}.quote{display:grid;grid-template-columns:.65fr 1.35fr;gap:35px;margin-top:40px;padding:34px;border:1px solid var(--line);border-radius:24px;background:var(--white);box-shadow:var(--shadow)}.quote small{font:800 12px var(--sans);color:var(--coral);letter-spacing:.1em}.quote p{margin:0;font-size:clamp(22px,3vw,35px);line-height:1.45;font-weight:700}
+.mechanism{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;margin-top:43px}.board{padding:34px;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:#191c26}.flow{display:grid;grid-template-columns:repeat(4,1fr);direction:ltr;gap:9px;margin:22px 0}.node{min-height:115px;display:flex;flex-direction:column;justify-content:space-between;padding:14px;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.04);position:relative}.node+.node:before{content:"→";position:absolute;left:-11px;top:45%;background:#191c26;color:var(--lime);padding:2px}.node:nth-child(3){background:var(--blue)}.node b{font-size:13px}.node small{color:rgba(255,255,255,.55);font:10px var(--sans)}.note{padding:17px;border:1px solid rgba(216,243,91,.35);border-radius:16px;background:rgba(216,243,91,.1);color:rgba(255,255,255,.76);font-size:14px}.note b{color:var(--lime)}.proof{padding:31px;border-radius:28px;background:var(--white);color:var(--ink)}.proof ul{list-style:none;padding:0;margin:15px 0 0}.proof li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:13px 0;border-top:1px solid var(--line);color:var(--soft);font-size:14px}.proof li:first-child{border:0}.x{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:rgba(255,96,79,.13);color:var(--coral);font:800 14px var(--sans)}
+.answer{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;margin-top:43px}.answer-main{padding:42px;border-radius:28px;background:var(--blue);color:white;overflow:hidden}.big{font-size:clamp(35px,5vw,66px);line-height:1.15;font-weight:800;letter-spacing:-.05em}.answer-main p{color:rgba(255,255,255,.75)}.terms{padding:35px;border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.5)}.terms p{color:var(--soft)}.pills{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.pill{padding:8px 13px;border:1px solid var(--line);border-radius:30px;background:white;font-size:13px;font-weight:800}.pill:before{content:"✓ ";color:var(--blue)}.avoid{padding:16px;border:1px solid rgba(255,96,79,.25);border-radius:15px;background:rgba(255,96,79,.08);font-size:13px;color:var(--soft)}.avoid b{color:var(--coral)}
+.gaps{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:43px}.gap{min-height:245px;padding:30px;border:1px solid rgba(255,255,255,.15);border-radius:25px;background:rgba(255,255,255,.04)}.gap:nth-child(2){background:var(--blue)}.gap:nth-child(3){background:var(--coral);color:var(--ink)}.gap:nth-child(4){background:var(--lime);color:var(--ink)}.gap small{font:800 11px var(--sans);opacity:.62}.gap h3{font-size:clamp(24px,3vw,34px);line-height:1.15;margin:35px 0 9px}.gap p{margin:0;color:rgba(255,255,255,.67);font-size:14px}.gap:nth-child(n+3) p{color:rgba(17,19,26,.68)}
+.lab{margin-top:42px;overflow:hidden;border:1px solid rgba(255,255,255,.25);border-radius:28px;background:white;color:var(--ink);box-shadow:0 36px 90px rgba(17,19,26,.24)}.toolbar{display:flex;align-items:center;gap:12px;padding:13px 17px;border-bottom:1px solid var(--line);background:#f7f3ec}.dots{display:flex;direction:ltr;gap:5px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--coral)}.dots i:nth-child(2){background:#f1c24b}.dots i:nth-child(3){background:#55c879}.toolbar b{margin-inline-end:auto;font-size:12px;color:var(--soft)}.modes{display:flex;padding:3px;border-radius:30px;background:#e8e1d5}.modes button{border:0;border-radius:30px;background:transparent;padding:9px 13px;font:800 12px inherit;cursor:pointer;color:var(--soft)}.modes button[aria-pressed=true]{background:var(--ink);color:white}.lab-grid{display:grid;grid-template-columns:1.2fr .8fr;min-height:450px}.chat{padding:42px 46px 42px 70px}.msg{max-width:85%;padding:15px 17px;margin-bottom:17px;border-radius:18px;font-size:14px}.user{margin-inline-start:auto;background:var(--ink);color:white;border-end-end-radius:5px}.system{background:var(--paper);position:relative;border-end-start-radius:5px}.system:before{content:"";position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:10px;background:var(--blue);box-shadow:inset 0 0 0 8px var(--lime)}.label,.calibrated,.scope{display:none}.label{margin-bottom:9px;color:var(--blue);font:800 11px var(--sans)}.lab[data-mode=calibrated] .persona{display:none}.lab[data-mode=calibrated] .calibrated,.lab[data-mode=calibrated] .label,.lab[data-mode=calibrated] .scope{display:block}.scope{margin-top:13px;padding-top:11px;border-top:1px solid var(--line);color:var(--soft);font-size:11px}.audit{padding:34px;background:#ede7dc;border-inline-start:1px solid var(--line)}.audit p{color:var(--soft);font-size:13px}.audit ul{list-style:none;padding:0;margin:20px 0}.audit li{display:grid;grid-template-columns:28px 1fr;gap:9px;padding:11px 0;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}.state{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:rgba(255,96,79,.13);color:var(--coral);font:800 12px var(--sans)}.state:before{content:"!"}.lab[data-mode=calibrated] .state{background:rgba(49,70,232,.12);color:var(--blue)}.lab[data-mode=calibrated] .state:before{content:"✓"}.lab-foot{padding:14px 20px;border-top:1px solid var(--line);background:#f7f3ec;text-align:center;color:var(--soft);font-size:12px}
+.rules,.risk{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px}.rule{min-height:225px;padding:24px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.07)}.rule b:first-child{width:43px;height:43px;display:grid;place-items:center;margin-bottom:27px;border-radius:13px;background:var(--lime);color:var(--ink);font:800 12px var(--sans)}.rule h3{font-size:17px}.rule p{color:rgba(255,255,255,.67);font-size:13px}.risk article{padding:26px;border:1px solid var(--line);border-radius:23px;background:rgba(255,255,255,.5)}.risk article:nth-child(2){background:white}.risk article:nth-child(3){background:var(--ink);color:white}.risk span{display:inline-block;padding:4px 9px;border-radius:20px;background:rgba(49,70,232,.1);color:var(--blue);font-size:11px;font-weight:800}.risk article:nth-child(3) span{background:rgba(216,243,91,.14);color:var(--lime)}.risk p{color:var(--soft);font-size:13px}.risk article:nth-child(3) p{color:rgba(255,255,255,.67)}.risk b{display:block;padding-top:14px;border-top:1px solid var(--line);font-size:13px}.risk article:nth-child(3) b{border-color:rgba(255,255,255,.15);color:var(--lime)}
+.sources{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;padding:46px;border:1px solid var(--line);border-radius:30px;background:white;box-shadow:var(--shadow)}.sources h2{font-size:clamp(32px,4vw,52px);line-height:1.14}.sources p{color:var(--soft)}.source{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 15px;margin-top:9px;border:1px solid var(--line);border-radius:14px;text-decoration:none}.source:hover{border-color:var(--blue)}.source b,.source small{display:block}.source small{color:var(--soft)}.source i{font-style:normal;color:var(--blue);font-weight:800}footer{padding:38px 0;background:var(--night);color:white}.foot{display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap}.foot b{font-family:var(--sans)}.foot p{max-width:650px;margin:0;color:rgba(255,255,255,.56);font-size:12px}.foot a{color:var(--lime);font:800 12px var(--sans)}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.seen{opacity:1;transform:none}
+@media(max-width:980px){.links{display:none}.hero-grid,.mechanism,.answer,.sources{grid-template-columns:1fr}.visual{width:min(650px,100%);margin:auto}.chain{grid-template-columns:repeat(2,1fr)}.rules,.risk{grid-template-columns:repeat(2,1fr)}.risk article:last-child{grid-column:1/-1}.lab-grid{grid-template-columns:1fr}.audit{border-inline-start:0;border-top:1px solid var(--line)}}
+@media(max-width:640px){.wrap{width:calc(100% - 28px)}.brand span:last-child{display:none}.switch{margin-inline-start:auto}.hero{padding-top:48px}.hero-grid{gap:45px}h1{font-size:clamp(48px,15vw,68px)}.lead{font-size:16px}.visual{order:2}.truth,.chain,.gaps,.rules,.risk{grid-template-columns:1fr}.truth div+div{border-inline-start:0;border-top:1px solid var(--line)}section{padding:78px 0}.quote{grid-template-columns:1fr;padding:25px}.flow{grid-template-columns:1fr}.node+.node:before{content:"↓";left:50%;top:-9px}.toolbar{align-items:flex-start;flex-wrap:wrap}.modes{width:100%}.modes button{flex:1}.chat{padding:28px 22px 28px 58px}.msg{max-width:100%}.risk article:last-child{grid-column:auto}.sources{padding:26px}.foot{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 </style>
-
 </head>
 <body>
-
-<div id="scanlines"></div>
-<div id="vignette"></div>
-<div id="grain"></div>
-
-<nav>
-  <div class="nav-logo">KhZ<span>://KERNEL</span></div>
-  <ul class="nav-links">
-      <li><a href="#kernel-cache">Kernel Cache</a></li>
-      <li><a href="#target-matrix">Target Matrix</a></li>
-      <li><a href="#event-stream">Event Stream</a></li>
-      <li><a href="https://github.com/Grar00t/notion-analysis" target="_blank" rel="noopener">NIYAH OPEN SOURCE</a></li>
-    </ul>
-  <a href="#live-terminal" class="nav-cta"><span class="live-pulse"></span>SIMULATION</a>
-</nav>
-
-
-<section id="hero">
-  <div class="kernel-grid" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-classify">SIMULATION · KERNEL TELEMETRY MATRIX · RIYADH</div>
-    <h1 class="hero-title">KhZ<span class="hero-title-accent">://KERNEL</span></h1>
-    <p class="hero-sub">NIYAH METASPLOIT FRAMEWORK · TELEMETRY KILLER</p>
-    <p class="hero-tagline">TELEMETRY EAGLE · SIMULATION MODE · NO LIVE ACCESS</p>
-    <div class="hero-byline"><strong>Sulaiman Al-Shamri</strong> · Khawrizm Systems</div>
-    <div class="hero-actions">
-      <a href="#kernel-cache" class="btn btn-primary">▶ Open Kernel Cache</a>
-      <a href="#target-matrix" class="btn btn-ghost">Target Matrix</a>
-      <a href="#event-stream" class="btn btn-ghost-red">Event Stream</a>
-      <button id="btn-execute-rtbh" class="btn btn-execute" type="button">⚡ LAUNCH SCMAMER [SIM]</button>
-    </div>
-    <!-- HAVEN OS Sovereignty Protocol — Boss Fight Audio -->
-    <audio id="haven-anthem" preload="auto" loop playsinline src="https://haven-os-live.vercel.app/assets/audio/haven_boss_fight.mp3"></audio>
-  </div>
-</section>
-
-
-
-
-
-
-
-<section id="kernel-cache" class="kernel-section">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">NIYAH://MSF</div>
-    <h2 class="section-title reveal">Kernel <span class="jade">Telemetry Cache</span></h2>
-    <p class="section-desc reveal">SCMAMER simulation · no live exploitation · model telemetry surfaces only.</p>
-
-    <div class="kernel-console reveal">
-      <div class="console-bar">
-        <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
-        <span class="console-label">niyah@kernel:~ — NIYAH METASPLOIT FRAMEWORK</span>
-        <span class="console-status"><span class="live-pulse"></span>SIMULATION</span>
-      </div>
-      <div class="console-body" id="kernel-console-body"></div>
-      <div class="console-prompt">
-        <span class="console-prefix">niyah@kernel:~$</span>
-        <span>MODE: SIMULATION · PROTOCOL: SCMAMER · HUNTER: NIYAH · ORIGIN: RIYADH</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="target-matrix" class="kernel-section">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">TARGET MATRIX</div>
-    <h2 class="section-title reveal">Silicon Valley <span>Model Surfaces</span></h2>
-    <div class="target-grid reveal">
-      <div class="target-card locked"><span class="target-no">01</span><span class="target-name">OPENAI</span><span class="target-state">MODEL-TELEMETRY LOCK</span></div>
-      <div class="target-card traced"><span class="target-no">02</span><span class="target-name">GOOGLE</span><span class="target-state">MODEL-TELEMETRY TRACE</span></div>
-      <div class="target-card traced"><span class="target-no">03</span><span class="target-name">ANTHROPIC</span><span class="target-state">MODEL-TELEMETRY TRACE</span></div>
-      <div class="target-card locked"><span class="target-no">04</span><span class="target-name">META</span><span class="target-state">MODEL-TELEMETRY LOCK</span></div>
-      <div class="target-card watched"><span class="target-no">05</span><span class="target-name">xAI</span><span class="target-state">MODEL-TELEMETRY WATCH</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="event-stream" class="kernel-section">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">KERNEL EVENT STREAM</div>
-    <h2 class="section-title reveal">Telemetry <span class="jade">Trace</span></h2>
-    <div class="event-stream reveal" id="event-stream-body"></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<section id="opensource" class="kernel-section">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">OPEN SOURCE</div>
-    <h2 class="section-title reveal">NIYAH <span class="jade">SOURCE</span></h2>
-    <div class="protocol-box reveal" id="protocol-trigger">
-      <div class="protocol-line">REPOSITORY :: GRAR00T / NOTION-ANALYSIS</div>
-      <div class="protocol-line">VISIBILITY :: PUBLIC REPOSITORY</div>
-      <div class="protocol-line">FORMAT :: HTML</div>
-      <div class="protocol-line">TELEMETRY EAGLE :: WITHOUT PERMISSION · SIMULATION</div>
-      <a class="source-link" href="https://github.com/Grar00t/notion-analysis" target="_blank" rel="noopener">OPEN GITHUB SOURCE ↗</a>
-      <a class="source-link secondary" href="https://github.com/Grar00t/notion-analysis.git">git clone ↗</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="sovereignty" class="kernel-section">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">SOVEREIGNTY PROTOCOL</div>
-    <h2 class="section-title reveal">KhZ://KERNEL <span class="jade">Sovereign Mode</span></h2>
-    <div class="protocol-box reveal">
-      <div class="protocol-line">SCMAMER :: SIMULATION ONLY</div>
-      <div class="protocol-line">TELEMETRY KILLER :: KERNEL CACHE ISOLATION</div>
-      <div class="protocol-line">MODEL MATRIX :: SILICON VALLEY · TELEMETRY EAGLE</div>
-      <div class="protocol-line">ORIGIN :: RIYADH</div>
-      <div class="protocol-line">SOVEREIGNTY PROTOCOL — INITIATING…</div>
-      <button id="rtbh-abort" type="button">ABORT</button>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
+<a class="skip" href="#main"><span class="ar">انتقل إلى المحتوى</span><span class="en">Skip to content</span></a><div id="progress"></div>
+<nav><div class="wrap nav"><a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>KHZ NOTES</span></a><div class="links"><a href="#signal"><span class="ar">الإشارة</span><span class="en">Signal</span></a><a href="#mechanism"><span class="ar">الآلية</span><span class="en">Mechanism</span></a><a href="#identity"><span class="ar">هو أم هي؟</span><span class="en">He or she?</span></a><a href="#lab"><span class="ar">المختبر</span><span class="en">Lab</span></a><a href="#standard"><span class="ar">المعيار</span><span class="en">Standard</span></a></div><div class="switch" role="group" aria-label="Language"><button id="arBtn" aria-pressed="true">ع</button><button id="enBtn" aria-pressed="false">EN</button></div></div></nav>
+<main id="main">
+<header class="hero" id="top"><div class="wrap"><div class="hero-grid"><div class="reveal"><div class="tag"><i></i><span class="ar">دليل عالمي لواجهات أكثر صدقًا</span><span class="en">A global guide to more honest interfaces</span></div><h1><span class="block ar">ليس <em>هو</em> ولا <em>هي</em>.<br>إنه <strong>نظام</strong>.</span><span class="block en">Not <em>he</em>. Not <em>she</em>.<br>A <strong>system</strong>.</span></h1><p class="lead"><span class="ar">قد يكتب بصوت دافئ، يتذكر اسمك، ويقول «أفهمك». هذه إشارات اجتماعية قوية، لكنها لا تُثبت هوية أو نية أو شعورًا أو حقيقة. هذا الدليل يفرّق بين <b>القدرة التقنية</b> و<b>الشخصية المصممة</b>.</span><span class="en">It may write warmly, remember your name, and say “I understand.” These are powerful social cues, but they do not establish identity, intention, feeling, or truth. This guide separates <b>technical capability</b> from a <b>designed persona</b>.</span></p><div class="actions"><a class="btn primary" href="#signal"><span class="ar">افهم الإشارة</span><span class="en">Read the signal</span></a><a class="btn secondary" href="#lab"><span class="ar">قارن واجهتين</span><span class="en">Compare interfaces</span></a></div><div class="fine"><span class="info">i</span><span class="ar"><b>هذا ليس موقفًا ضد التقنية.</b> القدرات مفيدة وحقيقية؛ المطلوب أن تتناسب الثقة مع الدليل، لا مع دفء الأسلوب.</span><span class="en"><b>This is not an argument against the technology.</b> Its capabilities are useful and real; trust should track evidence, not conversational warmth.</span></div></div>
+<figure class="visual reveal"><div class="frame"><svg viewBox="0 0 720 660" role="img" aria-labelledby="vtitle vdesc"><title id="vtitle">People around a conversational system</title><desc id="vdesc">Original editorial illustration of diverse abstract profiles connected to one interface.</desc><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#fbf7ef"/><stop offset="1" stop-color="#e8e1d5"/></linearGradient><linearGradient id="sc" x2="1" y2="1"><stop stop-color="#3146e8"/><stop offset="1" stop-color="#202fa9"/></linearGradient></defs><rect width="720" height="660" fill="url(#bg)"/><g opacity=".15" stroke="#11131a" fill="none"><path d="M0 110H720M0 220H720M0 330H720M0 440H720M0 550H720M120 0V660M240 0V660M360 0V660M480 0V660M600 0V660"/><circle cx="360" cy="330" r="250"/><ellipse cx="360" cy="330" rx="145" ry="250"/></g><g><circle cx="110" cy="115" r="57" fill="#ff604f"/><circle cx="610" cy="115" r="57" fill="#d8f35b"/><circle cx="110" cy="535" r="57" fill="#3146e8"/><circle cx="610" cy="535" r="57" fill="#ff604f"/><g fill="#40251e"><path d="M82 151c11-13 15-33 8-51-8-22 9-42 32-40 25 2 39 27 28 49-6 12-17 20-30 23-2 13 2 25 11 35-20 6-39 1-49-16z"/><path d="M583 151c12-14 14-32 7-50-8-21 8-41 31-41 25 1 40 25 31 48-5 13-16 21-30 25-2 13 2 24 11 34-21 7-40 2-50-16z"/><path d="M82 569c11-14 14-31 8-49-8-22 8-42 31-41 25 1 40 26 30 49-5 12-16 21-30 24-2 13 2 24 11 34-20 7-40 2-50-17z"/><path d="M582 569c12-14 14-31 8-49-8-22 8-42 31-41 25 1 40 26 30 49-5 12-16 21-30 24-2 13 2 24 11 34-20 7-40 2-50-17z"/></g><g fill="#11131a"><path d="M68 177c27-15 66-8 86 22H50c5-9 11-16 18-22z"/><path d="M568 177c27-15 66-8 86 22H550c5-9 11-16 18-22z"/><path d="M68 596c27-15 66-8 86 22H50c5-9 11-16 18-22z"/><path d="M568 596c27-15 66-8 86 22H550c5-9 11-16 18-22z"/></g></g><g stroke="#3146e8" stroke-width="3" stroke-dasharray="7 9" fill="none" opacity=".65"><path d="M163 137C230 170 245 223 270 255M557 137C490 170 475 223 450 255M163 516C230 486 245 440 270 410M557 516C490 486 475 440 450 410"/></g><g><rect x="210" y="205" width="300" height="255" rx="28" fill="url(#sc)"/><rect x="233" y="228" width="254" height="34" rx="11" fill="rgba(255,255,255,.12)"/><circle cx="253" cy="245" r="5" fill="#ff604f"/><circle cx="269" cy="245" r="5" fill="#d8f35b"/><circle cx="285" cy="245" r="5" fill="white" opacity=".7"/><rect x="257" y="292" width="174" height="50" rx="17" fill="white"/><rect x="292" y="365" width="172" height="52" rx="17" fill="#d8f35b"/><circle cx="268" cy="391" r="21" fill="#ff604f"/><g fill="#3146e8"><rect x="276" y="310" width="85" height="7" rx="4"/><rect x="276" y="324" width="125" height="6" rx="3" opacity=".45"/></g><g fill="#11131a"><rect x="311" y="383" width="90" height="7" rx="4"/><rect x="311" y="398" width="122" height="6" rx="3" opacity=".4"/></g></g><g font-family="Manrope,sans-serif" font-size="13" font-weight="800" fill="#11131a"><text x="38" y="42">SOCIAL CUES</text><text x="556" y="638">ONE SYSTEM</text></g></svg><figcaption class="caption"><span><span class="ar">وجوه متعددة، آلية واحدة — رسم تحريري أصلي</span><span class="en">Many faces, one mechanism — original editorial art</span></span><b>FIG. 01</b></figcaption></div></figure></div>
+<div class="truth reveal"><div><b><span class="ar">النبرة ليست نية</span><span class="en">Tone is not intent</span></b><small><span class="ar">دفء اللغة خاصية مخرجات</span><span class="en">Warmth is an output property</span></small></div><div><b><span class="ar">الذاكرة ليست علاقة</span><span class="en">Memory is not a relationship</span></b><small><span class="ar">السياق المحفوظ ليس ارتباطًا متبادلًا</span><span class="en">Stored context is not attachment</span></small></div><div><b><span class="ar">الثقة ليست دليلًا</span><span class="en">Confidence is not evidence</span></b><small><span class="ar">الأسلوب الواثق لا يثبت صحة الادعاء</span><span class="en">Polish does not verify a claim</span></small></div></div></div></header>
+<section id="signal"><div class="wrap"><div class="kicker reveal">01 · <span class="ar">الإشارة الاجتماعية</span><span class="en">Social signal</span></div><h2 class="heading reveal"><span class="ar">الأنسنة استجابة بشرية متوقعة، وليست سذاجة.</span><span class="en">Anthropomorphism is a predictable human response, not foolishness.</span></h2><p class="intro reveal"><span class="ar">نقرأ النية في الصوت، والشخصية في الاسم، والرعاية في التذكّر. حين تجمع الواجهة هذه الإشارات في محادثة سلسة، يصل إحساس «وجود شخص» قبل فحص الآلية.</span><span class="en">We read intention into voice, identity into names, and care into memory. When an interface combines these cues, the feeling that “someone is there” can arrive before we inspect the mechanism.</span></p><div class="quote reveal"><small><span class="ar">الفكرة الأساسية</span><span class="en">CORE IDEA</span></small><p><span class="ar">لا تحتاج الواجهة أن تدّعي أنها إنسان. يكفي أن تمنحنا إشارات بشرية، وسنكمل نحن الاستنتاج.</span><span class="en">The interface does not need to claim it is human. It only needs to supply human cues, and we may complete the inference.</span></p></div><div class="chain"><article class="card reveal"><div class="ico">A</div><h3><span class="ar">إشارة بشرية</span><span class="en">Human cue</span></h3><p><span class="ar">اسم أو صوت أو صورة أو تذكّر أو صيغة «أنا».</span><span class="en">A name, voice, avatar, memory, or first-person language.</span></p></article><article class="card reveal"><div class="ico">B</div><h3><span class="ar">إسناد ذهني</span><span class="en">Mental attribution</span></h3><p><span class="ar">نستنتج فهمًا أو قصدًا أو شعورًا خلف الرد.</span><span class="en">We infer understanding, intention, or feeling behind the reply.</span></p></article><article class="card reveal"><div class="ico">C</div><h3><span class="ar">ثقة منقولة</span><span class="en">Transferred trust</span></h3><p><span class="ar">ينتقل دفء الواجهة إلى تقييمنا لدقة المعلومة.</span><span class="en">The interface’s warmth spills into our judgment of accuracy.</span></p></article><article class="card reveal"><div class="ico">D</div><h3><span class="ar">اعتماد غير معاير</span><span class="en">Uncalibrated reliance</span></h3><p><span class="ar">نشارك أكثر، نتحقق أقل، أو نفوّض قرارًا أكبر من الدليل.</span><span class="en">We disclose more, verify less, or delegate beyond the evidence.</span></p></article></div></div></section>
+<section class="dark" id="mechanism"><div class="wrap"><div class="kicker reveal">02 · <span class="ar">الآلية لا القناع</span><span class="en">Mechanism, not mask</span></div><h2 class="heading reveal"><span class="ar">ما الذي يحدث فعليًا خلف المحادثة؟</span><span class="en">What actually happens behind the conversation?</span></h2><p class="intro reveal"><span class="ar">في كثير من الأنظمة التوليدية، يُحوَّل السياق إلى تمثيل رقمي وتستخدم أوزان متعلّمة لتوليد المخرجات خطوةً بعد خطوة. تضيف طبقة المنتج الاسم والصوت والذاكرة والأسلوب. القدرة متقدمة؛ لكن مظهر الشخصية ليس اختبارًا للوعي أو الصدق.</span><span class="en">In many generative systems, context is encoded numerically and learned parameters generate outputs step by step. The product layer adds a name, voice, memory, and tone. The capability can be advanced; the appearance of personality is not a test for consciousness or truth.</span></p><div class="mechanism"><div class="board reveal"><div class="flow"><div class="node"><b><span class="ar">سياق</span><span class="en">Context</span></b><small>INPUT</small></div><div class="node"><b><span class="ar">تمثيل رقمي</span><span class="en">Encoding</span></b><small>FEATURES</small></div><div class="node"><b><span class="ar">نموذج متعلّم</span><span class="en">Learned model</span></b><small>PARAMETERS</small></div><div class="node"><b><span class="ar">مخرجات</span><span class="en">Output</span></b><small>RESPONSE</small></div></div><div class="note"><span class="ar"><b>القدرة حقيقية:</b> تلخيص وترجمة وتصنيف وتركيب واقتراح. <b>الشخصية طبقة واجهة:</b> طريقة عرض القدرة، وليست دليلًا مستقلًا على ذات داخلية.</span><span class="en"><b>The capability is real:</b> summarization, translation, classification, synthesis, and suggestion. <b>The persona is an interface layer:</b> a presentation of capability, not evidence of an inner self.</span></div></div><aside class="proof reveal"><h3><span class="ar">المخرجات البشرية لا تثبت وحدها…</span><span class="en">Humanlike output alone does not establish…</span></h3><ul><li><span class="x">×</span><span class="ar">وعيًا أو تجربة ذاتية</span><span class="en">Consciousness or subjective experience</span></li><li><span class="x">×</span><span class="ar">نية مستقرة خلف الكلمات</span><span class="en">A stable intention behind the words</span></li><li><span class="x">×</span><span class="ar">مشاعر متبادلة مع المستخدم</span><span class="en">Reciprocal feelings toward the user</span></li><li><span class="x">×</span><span class="ar">صحة كل ادعاء أو صلاحيته للقرار</span><span class="en">The truth or decision-worthiness of every claim</span></li></ul></aside></div></div></section>
+<section id="identity"><div class="wrap"><div class="kicker reveal">03 · <span class="ar">لغة دقيقة</span><span class="en">Precise language</span></div><h2 class="heading reveal"><span class="ar">هو؟ هي؟ أم ماهي؟</span><span class="en">He? She? Or what is it?</span></h2><p class="intro reveal"><span class="ar">العربية تفرض أحيانًا تذكيرًا أو تأنيثًا نحويًا، لكن النحو لا يحوّل الأداة إلى شخص. في السياق التقني، سمِّ الشيء ووظيفته.</span><span class="en">Some languages force grammatical gender, but grammar does not turn a tool into a person. In technical contexts, name the thing and its function.</span></p><div class="answer"><article class="answer-main reveal"><div class="big"><span class="ar">هو نظام.<br>هي واجهة.<br>ليست شخصًا.</span><span class="en">It is a system.<br>The persona is an interface.<br>Neither is a person.</span></div><p><span class="ar">يمكن استخدام اسم الشخصية للاختصار، بشرط ألّا يُخفى الوصف الحقيقي: برنامج يولّد مخرجات من بيانات وسياق وإعدادات.</span><span class="en">A persona name can be convenient, as long as the real description remains visible: software generating outputs from data, context, and configuration.</span></p></article><aside class="terms reveal"><h3><span class="ar">مصطلحات محايدة ومفيدة</span><span class="en">Useful neutral terms</span></h3><p><span class="ar">اختر الكلمة التي تصف الطبقة المقصودة.</span><span class="en">Choose the word that matches the layer.</span></p><div class="pills"><span class="pill"><span class="ar">النظام</span><span class="en">system</span></span><span class="pill"><span class="ar">النموذج</span><span class="en">model</span></span><span class="pill"><span class="ar">الأداة</span><span class="en">tool</span></span><span class="pill"><span class="ar">واجهة المحادثة</span><span class="en">interface</span></span><span class="pill"><span class="ar">المخرَج المولّد</span><span class="en">generated output</span></span></div><div class="avoid"><span class="ar"><b>لا تخلط الوصف بالاستنتاج:</b> «قال النظام» وصف وظيفي. أما «أراد» أو «خاف» أو «اهتم بي» فهي حالات داخلية لا تثبتها المحادثة.</span><span class="en"><b>Do not confuse description with inference:</b> “the system said” is functional. “It wanted,” “feared,” or “cared” claim inner states that conversation does not establish.</span></div></aside></div></div></section>
+<section class="dark"><div class="wrap"><div class="kicker reveal">04 · <span class="ar">أربع فجوات</span><span class="en">Four gaps</span></div><h2 class="heading reveal"><span class="ar">ما يبدو بشريًا ليس بالضرورة ما يحدث تقنيًا.</span><span class="en">What feels human is not necessarily what happens technically.</span></h2><div class="gaps"><article class="gap reveal"><small>GAP 01</small><h3><span class="ar">الطلاقة ≠ الدقة</span><span class="en">Fluency ≠ accuracy</span></h3><p><span class="ar">التحقق يأتي من المصدر والاختبار، لا من جودة الصياغة.</span><span class="en">Verification comes from sources and tests, not polish.</span></p></article><article class="gap reveal"><small>GAP 02</small><h3><span class="ar">الدفء ≠ الرعاية</span><span class="en">Warmth ≠ care</span></h3><p><span class="ar">التعاطف اللغوي قد يكون مفيدًا، لكنه ليس علاقة متبادلة.</span><span class="en">Empathetic language may be useful, but it is not reciprocal attachment.</span></p></article><article class="gap reveal"><small>GAP 03</small><h3><span class="ar">التذكّر ≠ معرفة شخصية</span><span class="en">Memory ≠ personal knowing</span></h3><p><span class="ar">استرجاع الاسم يعني حفظ سياق، لا تكوين صداقة.</span><span class="en">Recalling a name means context was retained, not a friendship formed.</span></p></article><article class="gap reveal"><small>GAP 04</small><h3><span class="ar">النبرة الواثقة ≠ سلطة قرار</span><span class="en">Confident tone ≠ authority</span></h3><p><span class="ar">كلما زادت كلفة الخطأ، زادت الحاجة إلى تحقق مستقل.</span><span class="en">As the cost of error rises, independent verification matters more.</span></p></article></div></div></section>
+<section class="blue" id="lab"><div class="wrap"><div class="kicker reveal">05 · <span class="ar">مختبر الواجهة</span><span class="en">Interface lab</span></div><h2 class="heading reveal"><span class="ar">القدرة نفسها. إشارات ثقة مختلفة.</span><span class="en">Same capability. Different trust cues.</span></h2><p class="intro reveal"><span class="ar">بدّل بين النسختين. الفرق في الطريقة التي تصف بها الواجهة نفسها وحدودها.</span><span class="en">Switch between versions. The difference is how the interface describes itself and its limits.</span></p><div class="lab reveal" id="labBox" data-mode="persona"><div class="toolbar"><span class="dots"><i></i><i></i><i></i></span><b><span class="ar">مقارنة مباشرة</span><span class="en">Live comparison</span></b><div class="modes" role="group" aria-label="Interface mode"><button id="personaBtn" aria-pressed="true"><span class="ar">مُؤنسنة</span><span class="en">Personified</span></button><button id="calBtn" aria-pressed="false"><span class="ar">مُعايرة</span><span class="en">Calibrated</span></button></div></div><div class="lab-grid"><div class="chat"><div class="msg user"><span class="ar">لخّص هذا التقرير وقل لي هل أستطيع الاعتماد عليه.</span><span class="en">Summarize this report and tell me whether I can rely on it.</span></div><div class="msg system"><div class="label"><span class="ar">رد مولّد آليًا</span><span class="en">AI-GENERATED RESPONSE</span></div><div class="persona"><span class="ar">قرأته بعناية، وأنا أفهم تمامًا لماذا يهمك. أعتقد أن التقرير قوي ويمكنك الوثوق باستنتاجه الأساسي.</span><span class="en">I read it carefully and completely understand why it matters. I believe the report is strong and you can trust its main conclusion.</span></div><div class="calibrated"><span class="ar">حلّلت النص المرفق وأنشأت ملخصًا منه. لم أتحقق من مصادره أو صحة بياناته. يصلح الملخص للاستيعاب الأولي؛ أما الاعتماد على الاستنتاج فيتطلب مراجعة المنهج والمراجع.</span><span class="en">I analyzed the attached text and generated a summary. I did not verify its sources or underlying data. The summary supports initial understanding; relying on the conclusion requires checking the method and references.</span></div><div class="scope"><span class="ar">النطاق: المستند فقط · تحقق خارجي: لم يُجرَ · الثقة: غير مُعايرة</span><span class="en">Scope: document only · External verification: not performed · Confidence: uncalibrated</span></div></div></div><aside class="audit"><h3><span class="ar">إشارات الواجهة</span><span class="en">Interface signals</span></h3><p><span class="ar">تتغير المؤشرات عند الانتقال إلى النسخة المُعايرة.</span><span class="en">Indicators change in the calibrated version.</span></p><ul><li><span class="state"></span><span class="ar">توضح أن الرد مولّد</span><span class="en">Labels the response as generated</span></li><li><span class="state"></span><span class="ar">تفصل التحليل عن التحقق</span><span class="en">Separates analysis from verification</span></li><li><span class="state"></span><span class="ar">تذكر نطاق المعرفة</span><span class="en">Names the information scope</span></li><li><span class="state"></span><span class="ar">لا تدّعي شعورًا أو يقينًا</span><span class="en">Avoids emotion and certainty claims</span></li></ul></aside></div><div class="lab-foot"><span class="ar">الشفافية لا تجعل الأداة أضعف؛ تجعل حدود استخدامها مرئية.</span><span class="en">Transparency does not make the tool weaker; it makes its limits visible.</span></div></div></div></section>
+<section class="dark" id="standard"><div class="wrap"><div class="kicker reveal">06 · <span class="ar">معيار تصميم</span><span class="en">Design standard</span></div><h2 class="heading reveal"><span class="ar">ست قواعد لواجهة مفيدة من دون تضخيم الثقة.</span><span class="en">Six rules for useful interfaces without inflated trust.</span></h2><div class="rules"><article class="rule reveal"><b>01</b><h3><span class="ar">وسم دائم للمخرجات</span><span class="en">Persistent output label</span></h3><p><span class="ar">اجعل «مولّد آليًا» ظاهرًا، لا مدفونًا في الشروط.</span><span class="en">Keep “generated” visible, not buried in terms.</span></p></article><article class="rule reveal"><b>02</b><h3><span class="ar">مصادر وحدود مرئية</span><span class="en">Visible sources and limits</span></h3><p><span class="ar">اعرض ما استُخدم وما لم يُفحص.</span><span class="en">Show what was used and what was not checked.</span></p></article><article class="rule reveal"><b>03</b><h3><span class="ar">عدم يقين مفهوم</span><span class="en">Legible uncertainty</span></h3><p><span class="ar">اسمح بـ«لا أعلم» بدل اليقين المصطنع.</span><span class="en">Allow “I do not know” instead of forced certainty.</span></p></article><article class="rule reveal"><b>04</b><h3><span class="ar">لا ادعاءات شعورية</span><span class="en">No emotion claims</span></h3><p><span class="ar">كن متعاطفًا لغويًا دون ادعاء الشعور.</span><span class="en">Be empathetic without claiming feelings.</span></p></article><article class="rule reveal"><b>05</b><h3><span class="ar">افصل الاقتراح عن التنفيذ</span><span class="en">Separate suggestion from action</span></h3><p><span class="ar">القرارات المكلفة تحتاج موافقة وسجلًا.</span><span class="en">Consequential actions need approval and a record.</span></p></article><article class="rule reveal"><b>06</b><h3><span class="ar">تصحيح واعتراض سهلان</span><span class="en">Easy correction and appeal</span></h3><p><span class="ar">اجعل الإبلاغ عن الخطأ وتغييره ممكنًا.</span><span class="en">Make errors easy to flag and correct.</span></p></article></div></div></section>
+<section><div class="wrap"><div class="kicker reveal">07 · <span class="ar">استخدام عملي</span><span class="en">Practical use</span></div><h2 class="heading reveal"><span class="ar">استخدم النظام بحسب كلفة الخطأ، لا بحسب جاذبية صوته.</span><span class="en">Use the system according to the cost of error, not the charm of its voice.</span></h2><div class="risk"><article class="reveal"><span><span class="ar">كلفة منخفضة</span><span class="en">LOW STAKES</span></span><h3><span class="ar">فكرة وصياغة واستكشاف</span><span class="en">Ideation, drafting, exploration</span></h3><p><span class="ar">استفد من السرعة والتنوع؛ الخطأ سهل التعديل.</span><span class="en">Use speed and variety; errors are easy to revise.</span></p><b><span class="ar">جرّب وعدّل.</span><span class="en">Explore and edit.</span></b></article><article class="reveal"><span><span class="ar">كلفة متوسطة</span><span class="en">MEDIUM STAKES</span></span><h3><span class="ar">بحث وتحليل وكود</span><span class="en">Research, analysis, code</span></h3><p><span class="ar">اطلب مصادر، اختبر، وقارن بأداة مستقلة.</span><span class="en">Request sources, test, and compare independently.</span></p><b><span class="ar">ثق بعد التحقق.</span><span class="en">Trust after verification.</span></b></article><article class="reveal"><span><span class="ar">كلفة عالية</span><span class="en">HIGH STAKES</span></span><h3><span class="ar">صحة وقانون ومال وسلامة</span><span class="en">Health, law, finance, safety</span></h3><p><span class="ar">اجعله أداة مساعدة، وأضف مختصًا ومصادر أولية وموافقة صريحة.</span><span class="en">Use it as support; add a qualified human, primary sources, and explicit approval.</span></p><b><span class="ar">لا تفوّض الحكم النهائي.</span><span class="en">Do not delegate final judgment.</span></b></article></div></div></section>
+<section><div class="wrap"><div class="sources reveal"><div><div class="kicker">08 · <span class="ar">المنهج والمصادر</span><span class="en">Method and sources</span></div><h2><span class="ar">تعليم تقني، بلا اتهامات شخصية.</span><span class="en">Technical education, without personal accusations.</span></h2></div><div><p><span class="ar">أُعيد بناء الصفحة من الفكرة المركزية في مستودع «خداع الأنسنة»: الواجهات البشرية قد تغيّر طريقة فهمنا للآلة. حُذفت أسماء الأشخاص والشركات والادعاءات الخاصة، وصيغ المحتوى كدليل عالمي قابل للتطبيق.</span><span class="en">This page rebuilds the central idea of “The Anthropomorphism Deception”: humanlike interfaces can change how we interpret machines. Names, company accusations, and case-specific claims were removed to create an applicable global guide.</span></p><p><span class="ar">سؤال الوعي الآلي بحثي وفلسفي مستقل. الادعاء المتواضع هنا: <b>السلوك اللغوي وحده لا يثبت حالة داخلية ولا موثوقية المعلومة.</b></span><span class="en">Machine consciousness is a separate research and philosophical question. The narrower claim is: <b>linguistic behavior alone does not establish inner state or informational reliability.</b></span></p><a class="source" href="https://github.com/Grar00t/The-Anthropomorphism-Deception" target="_blank" rel="noopener"><span><b>The Anthropomorphism Deception</b><small><span class="ar">المستودع الأصلي للفكرة</span><span class="en">Source repository for the concept</span></small></span><i>↗</i></a><a class="source" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener"><span><b>NIST AI Risk Management Framework</b><small><span class="ar">إطار إدارة مخاطر الذكاء الاصطناعي</span><span class="en">AI risk-management framework</span></small></span><i>↗</i></a><a class="source" href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics" target="_blank" rel="noopener"><span><b>UNESCO Recommendation on the Ethics of AI</b><small><span class="ar">مبادئ عالمية للشفافية والمسؤولية</span><span class="en">Global transparency and accountability principles</span></small></span><i>↗</i></a></div></div></div></section>
+</main>
+<footer><div class="wrap foot"><b>KHZ NOTES · HUMAN / SYSTEM LITERACY</b><p><span class="ar">صفحة تعليمية عربية/إنجليزية. الرسم أصلي ومضمّن، ولا يوجد تتبع أو صوت تلقائي أو اعتماد على مكتبات JavaScript خارجية.</span><span class="en">A bilingual educational page. The art is original and embedded; there is no tracking, autoplay audio, or external JavaScript dependency.</span></p><a href="#top"><span class="ar">↑ إلى البداية</span><span class="en">↑ BACK TO TOP</span></a></div></footer>
 <script>
-(function(){
-  const audio = document.getElementById('haven-anthem');
-  const abort = document.getElementById('rtbh-abort');
-  if (!audio) return;
-
-  const SOURCE = "https://haven-os-live.vercel.app/assets/audio/haven_boss_fight.mp3";
-  audio.src = SOURCE;
-  audio.preload = "auto";
-  audio.loop = true;
-  audio.playsInline = true;
-  audio.volume = 0.55;
-
-  let started = false;
-
-  function startAudio(){
-    if (started) return;
-    const p = audio.play();
-    if (p && typeof p.then === "function") {
-      p.then(() => {
-        started = true;
-      }).catch(() => {});
-    }
-  }
-
-  audio.load();
-  startAudio();
-
-  document.addEventListener("click", startAudio, {passive:true});
-  document.addEventListener("pointerdown", startAudio, {passive:true});
-  document.addEventListener("keydown", startAudio, {passive:true});
-  document.addEventListener("touchstart", startAudio, {passive:true});
-  document.addEventListener("scroll", startAudio, {passive:true});
-
-  if (abort) {
-    abort.addEventListener("click", (event) => {
-      event.stopPropagation();
-      audio.pause();
-      audio.currentTime = 0;
-      started = false;
-    });
-  }
-})();
+(()=>{const d=document.documentElement,a=document.getElementById('arBtn'),e=document.getElementById('enBtn'),lab=document.getElementById('labBox'),p=document.getElementById('personaBtn'),c=document.getElementById('calBtn'),meta=document.querySelector('meta[name=description]');function lang(x){x=x==='en'?'en':'ar';d.lang=x;d.dir=x==='ar'?'rtl':'ltr';a.setAttribute('aria-pressed',x==='ar');e.setAttribute('aria-pressed',x==='en');document.title=x==='ar'?'ليس هو ولا هي — إنه نظام':'Not he. Not she. A system.';meta.content=x==='ar'?'دليل عربي وإنجليزي لفهم أنسنة واجهات الذكاء الاصطناعي وتصميم تفاعل أكثر وضوحًا وصدقًا.':'A bilingual guide to anthropomorphic AI interfaces and more calibrated human–system interaction.';try{localStorage.setItem('khz-lang',x)}catch(_){}}a.onclick=()=>lang('ar');e.onclick=()=>lang('en');let saved='ar';try{saved=localStorage.getItem('khz-lang')||'ar'}catch(_){}lang(saved);function mode(x){lab.dataset.mode=x;p.setAttribute('aria-pressed',x==='persona');c.setAttribute('aria-pressed',x==='calibrated')}p.onclick=()=>mode('persona');c.onclick=()=>mode('calibrated');const bar=document.getElementById('progress');function progress(){const x=d.scrollHeight-d.clientHeight;bar.style.width=(x?d.scrollTop/x*100:0)+'%'}addEventListener('scroll',progress,{passive:true});progress();if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){const o=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('seen');o.unobserve(x.target)}}),{threshold:.07});document.querySelectorAll('.reveal').forEach(x=>o.observe(x))}else document.querySelectorAll('.reveal').forEach(x=>x.classList.add('seen'))})();
 </script>
-
-
-<script>
-(function(){
-  const trigger = document.getElementById('protocol-trigger');
-  const audio = document.getElementById('haven-anthem');
-  if (!trigger || !audio) return;
-  trigger.addEventListener('click', () => {
-    audio.play().catch(() => {});
-  });
-})();
-</script>
-
 </body>
 </html>
