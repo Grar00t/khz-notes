@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check JavaScript syntax
+        run: node --check v2.js
+      - name: Verify local asset wiring
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s index.html
+          test -s v2.css
+          test -s v2.js
+          grep -Fq 'href="./v2.css"' index.html
+          grep -Fq 'src="./v2.js"' index.html
+      - name: Enforce no-upload JavaScript boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -En 'fetch[[:space:]]*\(|XMLHttpRequest|WebSocket|EventSource|sendBeacon|navigator\.sendBeacon' v2.js; then
+            echo "Network-capable JavaScript API found in v2.js" >&2
+            exit 1
+          fi
