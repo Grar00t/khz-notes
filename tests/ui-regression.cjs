@@ -17,3 +17,4 @@ check('markup input escaped',()=>{const s=boot();s.ids.fillerInput.value='<img s
 check('sample buttons and presets work',()=>{const s=boot();s.samples[1].fire('click');assert(s.ids.fillerInput.value.includes('بحسب'));s.presets[1].fire('click');assert.equal(s.ids.warmthRange.value,92);assert(s.ids.personaOutput.textContent.includes('أفهم'))});
 check('comparison mode reflects ARIA',()=>{const s=boot();s.click('calBtn');assert.equal(s.ids.labBox.dataset.mode,'calibrated');assert.equal(s.ids.calBtn.attrs['aria-pressed'],'true');s.click('personaBtn');assert.equal(s.ids.labBox.dataset.mode,'persona')});
 console.log(`${n}/8 focused DOM regression checks passed (stub DOM, not browser rendering).`);
+
